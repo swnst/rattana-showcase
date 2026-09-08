@@ -66,48 +66,63 @@ export function QuickPreview() {
   useGSAP(
     () => {
       if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          titleRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       const cards = containerRef.current?.querySelectorAll('.preview-card')
       if (cards && cards.length > 0) {
-        gsap.from(cards, {
-          y: 40,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 75%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          cards,
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.12,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       if (buttonWrapperRef.current) {
-        gsap.from(buttonWrapperRef.current, {
-          y: 20,
-          opacity: 0,
-          duration: 0.6,
-          delay: 0.6,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 75%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          buttonWrapperRef.current,
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            delay: 0.3,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
     },
     [],

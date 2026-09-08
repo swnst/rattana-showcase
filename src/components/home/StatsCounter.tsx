@@ -54,18 +54,23 @@ export function StatsCounter() {
     () => {
       const cards = containerRef.current?.querySelectorAll('.stat-card')
       if (cards && cards.length > 0) {
-        gsap.from(cards, {
-          opacity: 0,
-          y: 40,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          cards,
+          { opacity: 0, y: 35 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 90%',
+              once: true,
+            },
+          }
+        )
       }
     },
     [],

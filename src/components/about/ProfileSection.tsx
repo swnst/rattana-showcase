@@ -20,48 +20,46 @@ export function ProfileSection() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
           once: true,
         },
       })
 
-      tl.from(imageWrapperRef.current, {
-        x: -60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-      })
-        .from(
-          titleRef.current,
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-          },
-          '-=0.6'
+      if (imageWrapperRef.current) {
+        tl.fromTo(
+          imageWrapperRef.current,
+          { x: -40, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out', clearProps: 'all' }
         )
-        .from(
-          subtitleRef.current,
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
+      }
+
+      if (titleRef.current) {
+        tl.fromTo(
+          titleRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', clearProps: 'all' },
           '-=0.5'
         )
-        .from(
-          '.bio-paragraph',
-          {
-            y: 25,
-            opacity: 0,
-            duration: 0.7,
-            stagger: 0.18,
-            ease: 'power3.out',
-          },
+      }
+
+      if (subtitleRef.current) {
+        tl.fromTo(
+          subtitleRef.current,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'all' },
           '-=0.4'
         )
+      }
+
+      const bioParagraphs = sectionRef.current?.querySelectorAll('.bio-paragraph')
+      if (bioParagraphs && bioParagraphs.length > 0) {
+        tl.fromTo(
+          bioParagraphs,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power3.out', clearProps: 'all' },
+          '-=0.3'
+        )
+      }
     },
     [],
     sectionRef

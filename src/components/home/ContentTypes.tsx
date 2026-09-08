@@ -31,47 +31,63 @@ export function ContentTypes() {
   useGSAP(
     () => {
       if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          titleRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       if (imageRef.current) {
-        gsap.from(imageRef.current, {
-          scale: 0.85,
-          opacity: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          imageRef.current,
+          { scale: 0.9, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       const pills = containerRef.current?.querySelectorAll('.content-pill')
       if (pills && pills.length > 0) {
-        gsap.from(pills, {
-          scale: 0,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 0.6,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 75%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          pills,
+          { scale: 0.8, opacity: 0, y: 15 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 0.6,
+            ease: 'back.out(1.4)',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
     },
     [],

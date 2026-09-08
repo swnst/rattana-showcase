@@ -72,31 +72,46 @@ export function SkillsShowcase() {
 
   useGSAP(
     () => {
-      gsap.from(headingRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: 'top 85%',
-          once: true,
-        },
-      })
+      if (headingRef.current) {
+        gsap.fromTo(
+          headingRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: headingRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
 
-      gsap.from('.skill-card', {
-        scale: 0.9,
-        opacity: 0,
-        y: 30,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+      const cards = containerRef.current?.querySelectorAll('.skill-card')
+      if (cards && cards.length > 0) {
+        gsap.fromTo(
+          cards,
+          { scale: 0.92, opacity: 0, y: 25 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
     },
     [],
     containerRef

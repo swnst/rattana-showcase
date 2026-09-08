@@ -18,47 +18,62 @@ export function CTASection() {
   useGSAP(
     () => {
       if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          titleRef.current,
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       if (subtitleRef.current) {
-        gsap.from(subtitleRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          subtitleRef.current,
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            delay: 0.15,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       if (buttonRef.current) {
-        gsap.from(buttonRef.current, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.6,
-          delay: 0.4,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          buttonRef.current,
+          { scale: 0.85, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            delay: 0.3,
+            ease: 'back.out(1.5)',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
     },
     [],

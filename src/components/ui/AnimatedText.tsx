@@ -51,18 +51,25 @@ export function AnimatedText({
         }
       }
 
-      gsap.from(targets, {
-        ...fromVars,
-        duration: 0.8,
-        delay,
-        stagger: 0.05,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 85%',
-          once: true,
-        },
-      })
+      gsap.fromTo(
+        targets,
+        fromVars,
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.7,
+          delay,
+          stagger: 0.04,
+          ease: 'power3.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      )
     },
     [text, animationType, delay],
     containerRef

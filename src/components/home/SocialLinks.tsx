@@ -57,33 +57,43 @@ export function SocialLinks() {
     () => {
       const items = containerRef.current?.querySelectorAll('.social-item')
       if (items && items.length > 0) {
-        gsap.from(items, {
-          opacity: 0,
-          x: -30,
-          stagger: 0.1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          items,
+          { opacity: 0, x: -25 },
+          {
+            opacity: 1,
+            x: 0,
+            stagger: 0.08,
+            duration: 0.6,
+            ease: 'power2.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
 
       if (lineLinkRef.current) {
-        gsap.from(lineLinkRef.current, {
-          opacity: 0,
-          y: 20,
-          duration: 0.6,
-          delay: 0.4,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            once: true,
-          },
-        })
+        gsap.fromTo(
+          lineLinkRef.current,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: 0.25,
+            ease: 'power2.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
       }
     },
     [],

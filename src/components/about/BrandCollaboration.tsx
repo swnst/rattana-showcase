@@ -22,31 +22,45 @@ export function BrandCollaboration() {
 
   useGSAP(
     () => {
-      gsap.from(headerRef.current, {
-        y: 25,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 85%',
-          once: true,
-        },
-      })
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
 
-      gsap.from('.brand-box', {
-        rotation: -5,
-        opacity: 0,
-        y: 20,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+      const boxes = containerRef.current?.querySelectorAll('.brand-box')
+      if (boxes && boxes.length > 0) {
+        gsap.fromTo(
+          boxes,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
     },
     [],
     containerRef

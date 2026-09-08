@@ -41,11 +41,6 @@ export function useCountUp({
 
     return () => {
       anim.kill()
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === triggerEl) {
-          trigger.kill()
-        }
-      })
     }
   }, [end, start, duration, triggerRef])
 

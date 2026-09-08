@@ -28,18 +28,23 @@ export function ServiceCTA({
 
       const elements = containerRef.current.querySelectorAll('.cta-animate')
 
-      gsap.from(elements, {
-        y: 35,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+      gsap.fromTo(
+        elements,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      )
     },
     [],
     containerRef

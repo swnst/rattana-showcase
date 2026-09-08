@@ -65,30 +65,45 @@ export function SocialGrid() {
 
   useGSAP(
     () => {
-      gsap.from(headingRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: 'top 85%',
-          once: true,
-        },
-      })
+      if (headingRef.current) {
+        gsap.fromTo(
+          headingRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: headingRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
 
-      gsap.from('.social-grid-card', {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+      const cards = sectionRef.current?.querySelectorAll('.social-grid-card')
+      if (cards && cards.length > 0) {
+        gsap.fromTo(
+          cards,
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'power3.out',
+            clearProps: 'all',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        )
+      }
     },
     [],
     sectionRef

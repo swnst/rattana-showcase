@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
+import { useLenisContext } from '@/components/providers/LenisProvider'
 
 const navItems = [
   { href: '/', key: 'home' },
@@ -19,6 +20,7 @@ export function Navbar() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const { lenis } = useLenisContext()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -68,6 +70,10 @@ export function Navbar() {
               <Link
                 key={item.key}
                 href={item.href}
+                onClick={() => {
+                  if (lenis) lenis.scrollTo(0, { immediate: true })
+                  window.scrollTo({ top: 0, behavior: 'instant' })
+                }}
                 className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 select-none ${
                   isActive
                     ? 'text-white font-semibold'
@@ -147,7 +153,11 @@ export function Navbar() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setMobileMenuOpen(false)
+                      if (lenis) lenis.scrollTo(0, { immediate: true })
+                      window.scrollTo({ top: 0, behavior: 'instant' })
+                    }}
                     className={`px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
                       isActive
                         ? 'bg-gradient-to-r from-pink-accent to-pink-light text-white shadow-md'
