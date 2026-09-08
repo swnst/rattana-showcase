@@ -1,20 +1,20 @@
 // --- Root Layout ---
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Poppins, Noto_Sans_Thai } from 'next/font/google'
 import { LenisProvider } from '@/components/providers/LenisProvider'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-playfair',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
   display: 'swap',
 })
 
-const inter = Inter({
-  subsets: ['latin'],
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ['thai'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
+  variable: '--font-noto-thai',
   display: 'swap',
 })
 
@@ -29,7 +29,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${notoSansThai.variable}`}>
       <body className="bg-navy text-beige antialiased">
         <LenisProvider>
           {children}

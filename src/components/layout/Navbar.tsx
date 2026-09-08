@@ -1,11 +1,10 @@
 'use client'
 
 // --- Navbar Component ---
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
-import { gsap } from '@/lib/gsap'
 
 const navItems = [
   { href: '/', key: 'home' },
@@ -21,26 +20,11 @@ export function Navbar() {
   const router = useRouter()
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const navRef = useRef<HTMLElement>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!navRef.current) return
-      if (window.scrollY > 30) {
-        gsap.to(navRef.current, {
-          backgroundColor: '#203F9A',
-          boxShadow: '0 10px 30px rgba(15, 31, 77, 0.5)',
-          duration: 0.3,
-          ease: 'power2.out',
-        })
-      } else {
-        gsap.to(navRef.current, {
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-          duration: 0.3,
-          ease: 'power2.out',
-        })
-      }
+      setIsScrolled(window.scrollY > 30)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -54,106 +38,138 @@ export function Navbar() {
 
   return (
     <header
-      ref={navRef}
-      className="fixed top-0 left-0 right-0 z-40 transition-colors"
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        isScrolled ? 'py-3' : 'py-5'
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* --- Logo --- */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-serif text-3xl md:text-4xl font-bold text-pink-accent tracking-tight group-hover:scale-110 transition-transform">
-            R
-          </span>
-          <span className="text-sm md:text-base font-medium tracking-widest text-beige uppercase opacity-90 group-hover:text-sky-pastel transition-colors">
-            rattana
-          </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* --- Brand Logo --- */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-accent via-pink-light to-pink-accent flex items-center justify-center shadow-[0_0_20px_rgba(232,74,116,0.35)] group-hover:scale-105 transition-transform">
+            <span className="font-display font-extrabold text-white text-xl tracking-tight">
+              R
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-bold text-base text-beige tracking-tight group-hover:text-pink-light transition-colors leading-none">
+              rattana
+            </span>
+            <span className="text-[11px] font-medium tracking-widest text-sky-pastel/70 uppercase">
+              showcase
+            </span>
+          </div>
         </Link>
 
-        {/* --- Desktop Navigation --- */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* --- Desktop Floating Capsule Navigation --- */}
+        <nav className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-dark/75 backdrop-blur-xl border border-pink-accent/20 shadow-[0_8px_30px_rgba(18,6,11,0.5)]">
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm font-medium transition-colors relative py-1 ${
-                  isActive ? 'text-pink-accent font-semibold' : 'text-beige hover:text-sky-pastel'
+                className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 select-none ${
+                  isActive
+                    ? 'text-white'
+                    : 'text-beige/80 hover:text-white hover:bg-pink-accent/10'
                 }`}
               >
-                {t(item.key)}
                 {isActive && (
                   <motion.span
-                    layoutId="activeNavIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-accent rounded-full"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    layoutId="activeNavPill"
+                    className="absolute inset-0 bg-gradient-to-r from-pink-accent to-pink-light rounded-full shadow-[0_0_15px_rgba(232,74,116,0.45)]"
+                    transition={{ type: 'spring', stiffness: 420, damping: 32 }}
                   />
                 )}
+                <span className="relative z-10 font-sans tracking-tight">
+                  {t(item.key)}
+                </span>
               </Link>
             )
           })}
         </nav>
 
-        {/* --- Actions --- */}
-        <div className="flex items-center gap-4">
+        {/* --- Right Actions (Language Switcher + Work CTA) --- */}
+        <div className="flex items-center gap-3">
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full border border-sky-pastel/30 text-beige hover:border-pink-accent hover:text-pink-accent transition-colors"
+            className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-navy-dark/60 backdrop-blur-md border border-pink-accent/25 text-beige hover:border-pink-accent hover:text-pink-light hover:bg-pink-accent/10 transition-all cursor-pointer shadow-sm"
             aria-label="Toggle language"
           >
             {locale === 'en' ? 'TH' : 'EN'}
           </button>
 
+          <a
+            href="https://line.me/R/ti/p/@701zbckv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent shadow-[0_0_20px_rgba(232,74,116,0.35)] hover:shadow-[0_0_25px_rgba(232,74,116,0.55)] hover:scale-105 active:scale-95 transition-all"
+          >
+            <span>Line Work</span>
+          </a>
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col items-center justify-center w-9 h-9 gap-1.5 focus:outline-none cursor-pointer"
+            className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-navy-dark/80 border border-pink-accent/20 text-beige hover:bg-pink-accent/10 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle mobile menu"
           >
             <motion.span
-              animate={mobileMenuOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-beige block transition-transform origin-center"
+              animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              className="w-5 h-0.5 bg-beige block transition-transform origin-center"
             />
             <motion.span
               animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-0.5 bg-beige block transition-opacity"
+              className="w-5 h-0.5 bg-beige block my-1 transition-opacity"
             />
             <motion.span
-              animate={mobileMenuOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-beige block transition-transform origin-center"
+              animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              className="w-5 h-0.5 bg-beige block transition-transform origin-center"
             />
           </button>
         </div>
       </div>
 
-      {/* --- Mobile Menu Overlay --- */}
+      {/* --- Mobile Menu Drawer --- */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-20 bg-navy-dark z-30 flex flex-col items-center justify-center p-8 md:hidden"
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-x-4 top-20 z-40 p-4 md:hidden"
           >
-            <nav className="flex flex-col items-center gap-6">
-              {navItems.map((item, idx) => (
-                <motion.div
-                  key={item.key}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.08 }}
-                >
+            <div className="rounded-3xl p-6 bg-navy-dark/95 backdrop-blur-2xl border border-pink-accent/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)] flex flex-col gap-3">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href
+                return (
                   <Link
+                    key={item.key}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-2xl font-serif font-medium tracking-wide ${
-                      pathname === item.href ? 'text-pink-accent' : 'text-beige hover:text-sky-pastel'
+                    className={`px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
+                      isActive
+                        ? 'bg-gradient-to-r from-pink-accent to-pink-light text-white shadow-md'
+                        : 'text-beige hover:bg-white/5'
                     }`}
                   >
                     {t(item.key)}
                   </Link>
-                </motion.div>
-              ))}
-            </nav>
+                )
+              })}
+
+              <div className="pt-3 border-t border-pink-accent/15 mt-1">
+                <a
+                  href="https://line.me/R/ti/p/@701zbckv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 rounded-2xl bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent text-white font-semibold text-center shadow-md flex items-center justify-center gap-2"
+                >
+                  <span>Line @701zbckv</span>
+                </a>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

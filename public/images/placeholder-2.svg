@@ -1,13 +1,13 @@
 <svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#162B6B" />
+      <stop offset="0%" stop-color="#1A0A10" />
       <stop offset="50%" stop-color="#4E7CB2" />
-      <stop offset="100%" stop-color="#0F1F4D" />
+      <stop offset="100%" stop-color="#12060B" />
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#grad2)" />
-  <circle cx="600" cy="120" r="140" fill="#E84797" fill-opacity="0.2" />
-  <circle cx="150" cy="300" r="130" fill="#94C2DA" fill-opacity="0.3" />
-  <text x="400" y="235" fill="#EFE8E0" font-family="sans-serif" font-size="28" font-weight="600" text-anchor="middle" letter-spacing="4">PORTFOLIO ITEM 02</text>
+  <circle cx="600" cy="120" r="140" fill="#E84A74" fill-opacity="0.2" />
+  <circle cx="150" cy="300" r="130" fill="#FF85A2" fill-opacity="0.3" />
+  <text x="400" y="235" fill="#FFF0F4" font-family="sans-serif" font-size="28" font-weight="600" text-anchor="middle" letter-spacing="4">PORTFOLIO ITEM 02</text>
 </svg>
