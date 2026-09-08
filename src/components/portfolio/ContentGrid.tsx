@@ -6,8 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { PortfolioItem } from '@/data/portfolio-items'
 import { ContentCard } from './ContentCard'
 import { EmbedModal } from './EmbedModal'
-import { useGSAP } from '@/hooks/useGSAP'
-import { gsap } from '@/lib/gsap'
 
 export interface ContentGridProps {
   items: PortfolioItem[]
@@ -17,30 +15,6 @@ export interface ContentGridProps {
 export function ContentGrid({ items, locale = 'en' }: ContentGridProps) {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-
-  useGSAP(
-    () => {
-      if (!containerRef.current) return
-
-      const cards = containerRef.current.querySelectorAll('.bento-item')
-      if (!cards.length) return
-
-      gsap.from(cards, {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 85%',
-          once: true,
-        },
-      })
-    },
-    [],
-    containerRef
-  )
 
   const getBentoSpan = (index: number) => {
     if (index === 0) {
@@ -73,10 +47,10 @@ export function ContentGrid({ items, locale = 'en' }: ContentGridProps) {
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.92 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 25, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                transition={{ duration: 0.35, delay: Math.min(index * 0.05, 0.25), ease: 'easeOut' }}
                 className={`bento-item w-full h-full ${spanClass}`}
               >
                 <ContentCard

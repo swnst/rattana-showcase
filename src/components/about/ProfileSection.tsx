@@ -73,16 +73,16 @@ export function ProfileSection() {
         {/* --- Image Frame with Glow --- */}
         <div
           ref={imageWrapperRef}
-          className="relative w-full max-w-sm sm:max-w-md lg:w-5/12 flex-shrink-0"
+          className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[360px] mx-auto lg:mx-0 flex-shrink-0"
         >
           <div className="absolute -inset-2 bg-gradient-to-tr from-pink-accent/40 via-sky-pastel/20 to-transparent rounded-3xl blur-xl" />
-          <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border-2 border-pink-accent/60 shadow-[0_0_35px_rgba(232,71,151,0.25)] bg-navy-dark/60 backdrop-blur-md">
+          <div className="relative aspect-square w-full rounded-2xl overflow-hidden border-2 border-pink-accent/60 shadow-[0_0_35px_rgba(232,71,151,0.25)] bg-navy-dark/60 backdrop-blur-md">
             <Image
               src="/images/profile-placeholder.svg"
               alt={t('profileName')}
               fill
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+              sizes="(max-width: 768px) 280px, 360px"
               className="object-cover"
             />
           </div>
