@@ -1,0 +1,13 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E84797" />
+      <stop offset="60%" stop-color="#203F9A" />
+      <stop offset="100%" stop-color="#162B6B" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad3)" />
+  <circle cx="300" cy="200" r="160" fill="#E7A0CC" fill-opacity="0.25" />
+  <circle cx="550" cy="280" r="110" fill="#94C2DA" fill-opacity="0.3" />
+  <text x="400" y="235" fill="#EFE8E0" font-family="sans-serif" font-size="28" font-weight="600" text-anchor="middle" letter-spacing="4">PORTFOLIO ITEM 03</text>
+</svg>

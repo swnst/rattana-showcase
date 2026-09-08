@@ -1,0 +1,56 @@
+{
+  "en": {
+    "about": {
+      "profileName": "Rattana",
+      "profileSubtitle": "Content Creator • Cosplayer • Video Editor",
+      "bio1": "Hi, I'm Rattana — a content creator, cosplayer, and video editor based in Thailand. I'm passionate about creating engaging content that spans education, engineering, lifestyle, and creative arts.",
+      "bio2": "As an engineering student, I bring a unique perspective to content creation — blending technical knowledge with creative storytelling. Whether it's study tips, lifestyle vlogs, or cosplay transformations, I love pushing the boundaries of what social media content can be.",
+      "bio3": "I also offer professional video editing services, helping brands and creators bring their vision to life through compelling visual storytelling.",
+      "skillsTitle": "What I Specialize In",
+      "skills": {
+        "videoEditing": { "name": "Video Editing", "desc": "Professional editing for social media" },
+        "cosplay": { "name": "Cosplay", "desc": "Character transformation & creative photography" },
+        "education": { "name": "Education Content", "desc": "Study tips & engineering knowledge" },
+        "webDev": { "name": "Web Development", "desc": "Website creation & design" },
+        "content": { "name": "Content Creation", "desc": "Multi-platform content strategy" },
+        "lifestyle": { "name": "Lifestyle", "desc": "Daily life & personal branding" }
+      },
+      "brandsTitle": "Brands I've Worked With",
+      "brandsPlaceholder": "Brands coming soon"
+    },
+    "contact": {
+      "title": "Let's Work Together",
+      "subtitle": "Get in touch for collaborations or video editing services",
+      "ctaButton": "Contact via Line",
+      "socialTitle": "Find Me On",
+      "visitButton": "Visit"
+    }
+  },
+  "th": {
+    "about": {
+      "profileName": "รัตนา",
+      "profileSubtitle": "คอนเทนต์ครีเอเตอร์ • คอสเพลเยอร์ • นักตัดต่อวิดีโอ",
+      "bio1": "สวัสดี ฉันชื่อรัตนา — Content Creator, Cosplayer และ Video Editor จากประเทศไทย ฉันหลงใหลในการสร้างคอนเทนต์ที่น่าสนใจ ครอบคลุมทั้งการเรียน วิศวกรรม ไลฟ์สไตล์ และศิลปะสร้างสรรค์",
+      "bio2": "ในฐานะนักศึกษาวิศวกรรม ฉันนำมุมมองที่แตกต่างมาสู่การสร้างคอนเทนต์ — ผสมผสานความรู้ทางเทคนิคเข้ากับการเล่าเรื่องอย่างสร้างสรรค์ ไม่ว่าจะเป็นเทคนิคการเรียน ไลฟ์สไตล์ หรือการแปลงโฉม cosplay ฉันชอบท้าทายขีดจำกัดของคอนเทนต์บนโซเชียลมีเดีย",
+      "bio3": "ฉันยังรับตัดต่อวิดีโอแบบมืออาชีพ ช่วยแบรนด์และครีเอเตอร์ถ่ายทอดวิสัยทัศน์ผ่านการเล่าเรื่องด้วยภาพที่น่าดึงดูด",
+      "skillsTitle": "ความเชี่ยวชาญ",
+      "skills": {
+        "videoEditing": { "name": "ตัดต่อวิดีโอ", "desc": "ตัดต่อวิดีโอคุณภาพสำหรับ social media" },
+        "cosplay": { "name": "คอสเพลย์", "desc": "แปลงโฉมเป็นตัวละคร & ถ่ายภาพสร้างสรรค์" },
+        "education": { "name": "คอนเทนต์การเรียน", "desc": "เทคนิคการเรียน & ความรู้วิศวกรรม" },
+        "webDev": { "name": "พัฒนาเว็บไซต์", "desc": "สร้างและออกแบบเว็บไซต์" },
+        "content": { "name": "สร้างคอนเทนต์", "desc": "กลยุทธ์คอนเทนต์หลายแพลตฟอร์ม" },
+        "lifestyle": { "name": "ไลฟ์สไตล์", "desc": "ชีวิตประจำวัน & personal branding" }
+      },
+      "brandsTitle": "แบรนด์ที่เคยร่วมงาน",
+      "brandsPlaceholder": "เร็วๆ นี้"
+    },
+    "contact": {
+      "title": "มาทำงานด้วยกัน",
+      "subtitle": "ติดต่อเพื่อ collaboration หรือบริการตัดต่อวิดีโอ",
+      "ctaButton": "ติดต่อผ่าน Line",
+      "socialTitle": "ติดตามได้ที่",
+      "visitButton": "เข้าชม"
+    }
+  }
+}

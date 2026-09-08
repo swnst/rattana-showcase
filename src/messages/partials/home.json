@@ -1,0 +1,60 @@
+{
+  "en": {
+    "home": {
+      "hero": {
+        "name": "rattana_music",
+        "tagline": "Influencer • Cosplayer • Video Editor",
+        "cta": "Contact Me"
+      },
+      "stats": {
+        "title": "Numbers"
+      },
+      "contentTypes": {
+        "title": "What I Create",
+        "education": "Education & Engineering",
+        "website": "Websites",
+        "lifestyle": "Lifestyle",
+        "editing": "Video Editing",
+        "cosplay": "Cosplay"
+      },
+      "preview": {
+        "title": "Featured Work",
+        "viewAll": "View All Work"
+      },
+      "cta": {
+        "title": "Ready to Collaborate?",
+        "subtitle": "Let's create something amazing together",
+        "button": "Contact via Line"
+      }
+    }
+  },
+  "th": {
+    "home": {
+      "hero": {
+        "name": "rattana_music",
+        "tagline": "อินฟลูเอนเซอร์ • คอสเพลเยอร์ • นักตัดต่อวิดีโอ",
+        "cta": "ติดต่อฉัน"
+      },
+      "stats": {
+        "title": "ตัวเลข"
+      },
+      "contentTypes": {
+        "title": "คอนเทนต์ที่ฉันสร้าง",
+        "education": "การเรียน & วิศวกรรม",
+        "website": "เว็บไซต์",
+        "lifestyle": "ไลฟ์สไตล์",
+        "editing": "ตัดต่อวิดีโอ",
+        "cosplay": "คอสเพลย์"
+      },
+      "preview": {
+        "title": "ผลงานเด่น",
+        "viewAll": "ดูผลงานทั้งหมด"
+      },
+      "cta": {
+        "title": "พร้อมร่วมงานกันมั้ย?",
+        "subtitle": "มาสร้างสรรค์สิ่งดีๆ ด้วยกัน",
+        "button": "ติดต่อผ่าน Line"
+      }
+    }
+  }
+}

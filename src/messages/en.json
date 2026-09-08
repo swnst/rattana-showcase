@@ -1,0 +1,103 @@
+{
+  "common": {
+    "brand": "rattana_music",
+    "forWork": "For work: Line @701zbckv",
+    "lineId": "@701zbckv"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Rattana Portfolio",
+    "subtitle": "Creative Content Creator & Tech Specialist",
+    "description": "Welcome to my portfolio showcasing videos, lifestyle, education, and creative projects.",
+    "hero": {
+      "name": "rattana_music",
+      "tagline": "Influencer • Cosplayer • Video Editor",
+      "cta": "Contact Me"
+    },
+    "stats": {
+      "title": "Numbers",
+      "instagram": "Instagram Followers",
+      "tiktok": "TikTok Followers",
+      "lemon8": "Lemon8 Followers",
+      "content": "Content Created"
+    },
+    "contentTypes": {
+      "title": "What I Create",
+      "education": "Education & Engineering",
+      "website": "Websites",
+      "lifestyle": "Lifestyle",
+      "editing": "Video Editing",
+      "cosplay": "Cosplay"
+    },
+    "preview": {
+      "title": "Featured Work",
+      "viewAll": "View All Work"
+    },
+    "cta": {
+      "title": "Ready to Collaborate?",
+      "subtitle": "Let's create something amazing together",
+      "button": "Contact via Line"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A collection of my best work",
+    "filterAll": "All",
+    "filterEducation": "Education",
+    "filterLifestyle": "Lifestyle",
+    "filterCosplay": "Cosplay",
+    "filterWebsite": "Website",
+    "modalClose": "Close",
+    "viewOnPlatform": "View on {platform}"
+  },
+  "services": {
+    "title": "Video Editing Services",
+    "subtitle": "Professional video editing for social media content",
+    "badge": "Services",
+    "showcaseTitle": "My Editing Work",
+    "showcaseSubtitle": "Selected video editing and creative production highlights",
+    "processTitle": "How I Work",
+    "processSubtitle": "A structured, transparent workflow from vision to final delivery",
+    "ctaTitle": "Interested in working together?",
+    "ctaSubtitle": "Let us create outstanding visual stories for your brand and content.",
+    "ctaButton": "Contact via Line"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate Creator & Engineer",
+    "profileName": "Rattana",
+    "profileSubtitle": "Content Creator • Cosplayer • Video Editor",
+    "bio1": "Hi, I'm Rattana — a content creator, cosplayer, and video editor based in Thailand. I'm passionate about creating engaging content that spans education, engineering, lifestyle, and creative arts.",
+    "bio2": "As an engineering student, I bring a unique perspective to content creation — blending technical knowledge with creative storytelling. Whether it's study tips, lifestyle vlogs, or cosplay transformations, I love pushing the boundaries of what social media content can be.",
+    "bio3": "I also offer professional video editing services, helping brands and creators bring their vision to life through compelling visual storytelling.",
+    "skillsTitle": "What I Specialize In",
+    "skills": {
+      "videoEditing": { "name": "Video Editing", "desc": "Professional editing for social media" },
+      "cosplay": { "name": "Cosplay", "desc": "Character transformation & creative photography" },
+      "education": { "name": "Education Content", "desc": "Study tips & engineering knowledge" },
+      "webDev": { "name": "Web Development", "desc": "Website creation & design" },
+      "content": { "name": "Content Creation", "desc": "Multi-platform content strategy" },
+      "lifestyle": { "name": "Lifestyle", "desc": "Daily life & personal branding" }
+    },
+    "brandsTitle": "Brands I've Worked With",
+    "brandsPlaceholder": "Brands coming soon"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Get in touch for collaborations or video editing services",
+    "ctaButton": "Contact via Line",
+    "socialTitle": "Find Me On",
+    "visitButton": "Visit"
+  },
+  "footer": {
+    "forWork": "For work: Line @701zbckv",
+    "rights": "All rights reserved.",
+    "brand": "rattana_music"
+  }
+}

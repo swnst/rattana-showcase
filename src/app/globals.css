@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #203F9A;
+  --color-navy-dark: #162B6B;
+  --color-navy-deepest: #0F1F4D;
+  --color-sky-pastel: #94C2DA;
+  --color-pink-accent: #E84797;
+  --color-pink-light: #E7A0CC;
+  --color-beige: #EFE8E0;
+  --color-blue-medium: #4E7CB2;
+
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+}
+
+/* --- Base Styles --- */
+html {
+  scroll-behavior: smooth;
+  background-color: #203F9A;
+  color: #EFE8E0;
+}
+
+body {
+  background-color: #203F9A;
+  color: #EFE8E0;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- Selection Highlight --- */
+::selection {
+  background-color: #E84797;
+  color: #FFFFFF;
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1F4D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #162B6B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4E7CB2;
+}
+
+/* --- Accessibility: Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

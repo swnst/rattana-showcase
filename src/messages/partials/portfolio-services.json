@@ -1,0 +1,44 @@
+{
+  "en": {
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "A collection of my best work",
+      "filterAll": "All",
+      "filterEducation": "Education",
+      "filterLifestyle": "Lifestyle",
+      "filterCosplay": "Cosplay",
+      "filterWebsite": "Website",
+      "modalClose": "Close",
+      "viewOnPlatform": "View on {platform}"
+    },
+    "services": {
+      "title": "Video Editing Services",
+      "subtitle": "Professional video editing for social media content",
+      "showcaseTitle": "My Editing Work",
+      "processTitle": "How I Work",
+      "ctaTitle": "Interested in working together?",
+      "ctaButton": "Contact via Line"
+    }
+  },
+  "th": {
+    "portfolio": {
+      "title": "ผลงาน",
+      "subtitle": "รวมผลงานที่ดีที่สุดของฉัน",
+      "filterAll": "ทั้งหมด",
+      "filterEducation": "การเรียน",
+      "filterLifestyle": "ไลฟ์สไตล์",
+      "filterCosplay": "คอสเพลย์",
+      "filterWebsite": "เว็บไซต์",
+      "modalClose": "ปิด",
+      "viewOnPlatform": "ดูบน {platform}"
+    },
+    "services": {
+      "title": "บริการตัดต่อวิดีโอ",
+      "subtitle": "ตัดต่อวิดีโอคุณภาพสำหรับ social media",
+      "showcaseTitle": "ผลงานตัดต่อของฉัน",
+      "processTitle": "ขั้นตอนการทำงาน",
+      "ctaTitle": "สนใจร่วมงานกันมั้ย?",
+      "ctaButton": "ติดต่อผ่าน Line"
+    }
+  }
+}
