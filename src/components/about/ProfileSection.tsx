@@ -92,7 +92,7 @@ export function ProfileSection() {
         <div className="w-full lg:w-7/12 flex flex-col justify-center">
           <h1
             ref={titleRef}
-            className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight leading-none mb-3"
+            className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-gradient-hero tracking-tight leading-none mb-3"
           >
             {t('profileName')}
           </h1>

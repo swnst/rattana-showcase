@@ -64,3 +64,31 @@ body {
   }
 }
 
+/* --- Viva-Plus Signature Utilities --- */
+@utility text-gradient-rose {
+  background: linear-gradient(135deg, #E84A74 0%, #FF758C 50%, #C22B55 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-hero {
+  background: linear-gradient(135deg, #201018 0%, #7A1132 50%, #E84A74 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-cta {
+  background: linear-gradient(135deg, #FF6B93 0%, #E84A74 50%, #D42E5E 100%);
+}
+
+@utility shadow-soft-rose {
+  box-shadow: 0 10px 30px -10px rgba(232, 74, 116, 0.15);
+}
+
+@utility shadow-hover-rose {
+  box-shadow: 0 20px 40px -15px rgba(232, 74, 116, 0.25);
+}
+
+

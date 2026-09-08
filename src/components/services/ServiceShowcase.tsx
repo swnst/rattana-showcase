@@ -30,18 +30,23 @@ export function ServiceShowcase({
       const cards = sectionRef.current.querySelectorAll('.showcase-card')
       if (!cards.length) return
 
-      gsap.from(cards, {
-        y: 45,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          once: true,
-        },
-      })
+      gsap.fromTo(
+        cards,
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power3.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      )
     },
     [items],
     sectionRef
@@ -51,17 +56,20 @@ export function ServiceShowcase({
   const displayItems = items.slice(0, 6)
 
   return (
-    <section ref={sectionRef} className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="service-showcase" ref={sectionRef} className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-28">
       <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight">
-          {title}
+          {title}{' '}
+          <span className="text-gradient-rose">
+            {isThai ? 'ไฮไลต์' : 'Highlights'}
+          </span>
         </h2>
-        <p className="text-rose-900/75 text-sm sm:text-base font-medium">
+        <p className="text-rose-900/80 text-sm sm:text-base font-medium">
           {subtitle}
         </p>
       </div>
 
-      <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-6 md:pb-0 no-scrollbar snap-x snap-mandatory">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {displayItems.map((item) => {
           const itemTitle = isThai ? item.title.th : item.title.en
           const itemDesc = isThai ? item.description.th : item.description.en
@@ -69,7 +77,7 @@ export function ServiceShowcase({
           return (
             <div
               key={item.id}
-              className="showcase-card min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink rounded-3xl overflow-hidden border border-rose-200/80 bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:border-pink-accent/50 hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] transition-all duration-300 group flex flex-col"
+              className="showcase-card rounded-3xl overflow-hidden border border-rose-200/80 bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:border-pink-accent/50 hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] transition-all duration-300 group flex flex-col"
             >
               <div className="relative w-full aspect-video overflow-hidden bg-[#FFF0F4]">
                 <Image

@@ -73,7 +73,7 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center relative z-10">
         <h2
           ref={titleRef}
-          className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-gradient-hero mb-4 tracking-tight"
         >
           {t('title')}
         </h2>

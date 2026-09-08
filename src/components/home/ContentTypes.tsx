@@ -86,7 +86,7 @@ export function ContentTypes() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <h2
           ref={titleRef}
-          className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center text-rose-950 mb-12 md:mb-20 tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gradient-hero mb-12 md:mb-20 tracking-tight"
         >
           {t('title')}
         </h2>

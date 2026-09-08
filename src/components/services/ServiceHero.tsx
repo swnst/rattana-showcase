@@ -85,16 +85,23 @@ export function ServiceHero({
         </div>
 
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-6 leading-[1.15]">
-          {titleWords.map((word, idx) => (
-            <span
-              key={`${word}-${idx}`}
-              className="inline-block overflow-hidden mr-[0.25em] align-top"
-            >
-              <span className="hero-word inline-block will-change-transform">
-                {word}
+          {titleWords.map((word, idx) => {
+            const isHighlight = idx >= titleWords.length - 1
+            return (
+              <span
+                key={`${word}-${idx}`}
+                className="inline-block overflow-hidden mr-[0.25em] align-top"
+              >
+                <span
+                  className={`hero-word inline-block will-change-transform ${
+                    isHighlight ? 'text-gradient-rose' : 'text-rose-950'
+                  }`}
+                >
+                  {word}
+                </span>
               </span>
-            </span>
-          ))}
+            )
+          })}
         </h1>
 
         <p className="hero-subtitle text-lg sm:text-xl md:text-2xl text-rose-900/75 max-w-2xl mx-auto leading-relaxed font-medium">

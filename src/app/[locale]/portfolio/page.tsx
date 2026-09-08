@@ -68,7 +68,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
           <AnimatedText
             text={title}
             tag="h1"
-            className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-4"
+            className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold text-gradient-hero tracking-tight mb-4"
           />
           <p className="text-rose-900/75 text-base sm:text-lg font-medium">
             {subtitle}

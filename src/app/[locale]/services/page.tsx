@@ -2,11 +2,12 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { ServiceHero } from '@/components/services/ServiceHero'
+import { ServicesList } from '@/components/services/ServicesList'
 import { ServiceShowcase } from '@/components/services/ServiceShowcase'
 import { ProcessTimeline } from '@/components/services/ProcessTimeline'
 import { ServiceCTA } from '@/components/services/ServiceCTA'
 import { portfolioItems } from '@/data/portfolio-items'
-import { processSteps } from '@/data/services'
+import { services, processSteps } from '@/data/services'
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>
@@ -66,6 +67,12 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         title={title}
         subtitle={subtitle}
         badgeText={t('badge')}
+      />
+      <ServicesList
+        services={services}
+        title={t('listTitle')}
+        subtitle={t('listSubtitle')}
+        locale={locale}
       />
       <ServiceShowcase
         items={portfolioItems}

@@ -50,23 +50,33 @@ export function ProcessTimeline({
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: stepEl,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse',
+              start: 'top 85%',
+              once: true,
             },
           })
 
-          tl.from(dot, {
-            scale: 0,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'back.out(1.7)',
-          }).from(
+          tl.fromTo(
+            dot,
+            { scale: 0, opacity: 0 },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 0.5,
+              ease: 'back.out(1.7)',
+              clearProps: 'transform,opacity',
+            }
+          ).fromTo(
             content,
             {
-              x: stepEl.classList.contains('desktop-left') ? -40 : 40,
+              x: stepEl.classList.contains('desktop-left') ? -30 : 30,
               opacity: 0,
+            },
+            {
+              x: 0,
+              opacity: 1,
               duration: 0.6,
               ease: 'power3.out',
+              clearProps: 'transform,opacity',
             },
             '-=0.3'
           )
@@ -80,12 +90,15 @@ export function ProcessTimeline({
   const isThai = locale === 'th'
 
   return (
-    <section className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <section id="how-i-work" className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-28">
       <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-24">
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight">
-          {title}
+          {title}{' '}
+          <span className="text-gradient-rose">
+            {isThai ? 'อย่างมืออาชีพ' : 'Workflow'}
+          </span>
         </h2>
-        <p className="text-rose-900/75 text-sm sm:text-base font-medium">
+        <p className="text-rose-900/80 text-sm sm:text-base font-medium">
           {subtitle}
         </p>
       </div>
@@ -112,7 +125,7 @@ export function ProcessTimeline({
                 }`}
               >
                 <div
-                  className={`w-full md:w-1/2 pl-14 md:pl-0 ${
+                  className={`w-full md:w-1/2 pl-16 sm:pl-20 md:pl-0 ${
                     isEven ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'
                   }`}
                 >

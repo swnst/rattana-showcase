@@ -56,7 +56,7 @@ export function ContactInfo() {
       <div className="max-w-4xl mx-auto px-4">
         <h1
           ref={titleRef}
-          className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-6"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-gradient-hero tracking-tight mb-6"
         >
           {t('title')}
         </h1>
