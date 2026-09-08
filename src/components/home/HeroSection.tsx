@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl'
 import { gsap } from '@/lib/gsap'
 import { useGSAP } from '@/hooks/useGSAP'
 import { Button } from '@/components/ui/Button'
+import { InteractiveImageFrame } from '@/components/ui/InteractiveImageFrame'
 
 // --- Hero Section Component ---
 export function HeroSection() {
@@ -21,47 +22,67 @@ export function HeroSection() {
     () => {
       const chars = containerRef.current?.querySelectorAll('.hero-char')
       if (chars && chars.length > 0) {
-        gsap.from(chars, {
-          y: 60,
-          opacity: 0,
-          stagger: 0.05,
-          duration: 0.8,
-          ease: 'power3.out',
-        })
+        gsap.fromTo(
+          chars,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 0.8,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+          }
+        )
       }
 
       if (taglineRef.current) {
-        gsap.from(taglineRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.5,
-          ease: 'power3.out',
-        })
+        gsap.fromTo(
+          taglineRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.5,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+          }
+        )
       }
 
       if (imageWrapperRef.current) {
-        gsap.from(imageWrapperRef.current, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        })
+        gsap.fromTo(
+          imageWrapperRef.current,
+          { scale: 0.85, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+          }
+        )
       }
 
       if (ctaRef.current) {
-        gsap.from(ctaRef.current, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.6,
-          delay: 1,
-          ease: 'back.out(1.7)',
-        })
+        gsap.fromTo(
+          ctaRef.current,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            delay: 0.9,
+            ease: 'back.out(1.7)',
+            clearProps: 'transform,opacity',
+          }
+        )
       }
 
       if (imageRef.current && containerRef.current) {
         gsap.to(imageRef.current, {
-          yPercent: 15,
+          yPercent: 12,
           ease: 'none',
           scrollTrigger: {
             trigger: containerRef.current,
@@ -127,18 +148,25 @@ export function HeroSection() {
         <div className="flex-1 flex justify-center lg:justify-end">
           <div
             ref={imageWrapperRef}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(232,74,116,0.18)] border-2 border-white/80 bg-white/70 backdrop-blur-md"
+            className="w-64 sm:w-80 md:w-96"
           >
-            <div ref={imageRef} className="relative w-full h-full scale-105">
-              <Image
-                src="/images/profile-placeholder.svg"
-                alt="rattana_music profile"
-                fill
-                priority
-                sizes="(max-width: 768px) 256px, (max-width: 1024px) 384px, 384px"
-                className="object-cover"
-              />
-            </div>
+            <InteractiveImageFrame
+              aspectRatio="aspect-square"
+              tiltStrength={12}
+              enableGlow={true}
+              enableSvgBorder={true}
+            >
+              <div ref={imageRef} className="relative w-full h-full scale-105">
+                <Image
+                  src="/images/profile-placeholder.svg"
+                  alt="rattana_music profile"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 256px, (max-width: 1024px) 384px, 384px"
+                  className="object-cover"
+                />
+              </div>
+            </InteractiveImageFrame>
           </div>
         </div>
       </div>

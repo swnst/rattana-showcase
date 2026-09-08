@@ -50,53 +50,92 @@ export function ContentCard({
   const title = isThai ? item.title.th : item.title.en
   const aspectClass = aspectRatio === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
 
+  const cardRef = React.useRef<HTMLElement>(null)
+  const [glarePos, setGlarePos] = React.useState({ x: 50, y: 50, opacity: 0 })
+  const [tilt, setTilt] = React.useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    const tiltX = ((y - 50) / 50) * -7
+    const tiltY = ((x - 50) / 50) * 7
+    setGlarePos({ x, y, opacity: 1 })
+    setTilt({ x: tiltX, y: tiltY })
+  }
+
+  const handleMouseLeave = () => {
+    setGlarePos((prev) => ({ ...prev, opacity: 0 }))
+    setTilt({ x: 0, y: 0 })
+  }
+
   return (
-    <motion.article
-      layout
-      whileHover={{
-        scale: 1.03,
-        boxShadow: '0 20px 40px -10px rgba(232, 74, 116, 0.22)',
-      }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-      onClick={() => onSelect(item)}
-      className={`group relative w-full h-full min-h-[260px] rounded-3xl overflow-hidden cursor-pointer border border-rose-200/80 bg-white shadow-sm select-none ${aspectClass} ${className}`}
-    >
-      <Image
-        src={item.thumbnailUrl}
-        alt={title}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-      />
+    <div style={{ perspective: 1000 }} className="w-full h-full">
+      <motion.article
+        ref={cardRef}
+        layout
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        animate={{
+          rotateX: tilt.x,
+          rotateY: tilt.y,
+        }}
+        transition={{ type: 'spring', damping: 20, stiffness: 220, mass: 0.2 }}
+        whileHover={{
+          scale: 1.03,
+          boxShadow: '0 25px 50px -12px rgba(232, 74, 116, 0.3)',
+        }}
+        onClick={() => onSelect(item)}
+        className={`group relative w-full h-full min-h-[260px] rounded-3xl overflow-hidden cursor-pointer border border-rose-200/90 bg-white shadow-sm select-none ${aspectClass} ${className}`}
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        <Image
+          src={item.thumbnailUrl}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#201018]/90 via-[#201018]/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#201018]/90 via-[#201018]/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
-      <div className="absolute top-3 left-3 z-10">
-        <Badge variant="pink" className="shadow-md">
-          {item.category}
-        </Badge>
-      </div>
-
-      <div className="absolute top-3 right-3 z-10">
+        {/* Specular Glare Reflection */}
         <div
-          aria-label={item.platform}
-          className="w-8 h-8 rounded-full bg-white/85 backdrop-blur-md border border-rose-200/80 text-rose-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-110"
-        >
-          <PlatformIcon platform={item.platform} />
-        </div>
-      </div>
+          className="absolute inset-0 pointer-events-none z-20 mix-blend-overlay transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.08) 45%, transparent 75%)`,
+            opacity: glarePos.opacity,
+          }}
+        />
 
-      <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 transform transition-transform duration-300">
-        <h3 className="font-display text-base sm:text-lg md:text-xl font-bold text-white leading-snug line-clamp-2 drop-shadow-md">
-          {title}
-        </h3>
-        <p className="text-xs text-rose-200/90 mt-1 flex items-center justify-between font-medium">
-          <span>{item.date}</span>
-          <span className="text-pink-light group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
-            View &rarr;
-          </span>
-        </p>
-      </div>
-    </motion.article>
+        <div className="absolute top-3 left-3 z-10">
+          <Badge variant="pink" className="shadow-md">
+            {item.category}
+          </Badge>
+        </div>
+
+        <div className="absolute top-3 right-3 z-10">
+          <div
+            aria-label={item.platform}
+            className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md border border-rose-200/80 text-rose-600 flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110"
+          >
+            <PlatformIcon platform={item.platform} />
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 transform transition-transform duration-300">
+          <h3 className="font-display text-base sm:text-lg md:text-xl font-bold text-white leading-snug line-clamp-2 drop-shadow-md">
+            {title}
+          </h3>
+          <p className="text-xs text-rose-200/90 mt-1.5 flex items-center justify-between font-medium">
+            <span>{item.date}</span>
+            <span className="text-pink-light group-hover:translate-x-1.5 transition-transform inline-flex items-center text-xs font-semibold">
+              View &rarr;
+            </span>
+          </p>
+        </div>
+      </motion.article>
+    </div>
   )
 }
