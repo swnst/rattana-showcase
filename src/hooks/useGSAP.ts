@@ -18,8 +18,8 @@ export function useGSAP(
   })
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      return savedCallback.current(ctx)
+    const ctx = gsap.context((self) => {
+      return savedCallback.current(self)
     }, scope?.current ?? undefined)
 
     return () => {
