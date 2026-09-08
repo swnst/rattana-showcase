@@ -53,10 +53,10 @@ export function ServiceShowcase({
   return (
     <section ref={sectionRef} className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-beige mb-4 tracking-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight">
           {title}
         </h2>
-        <p className="text-sky-pastel/80 text-sm sm:text-base">
+        <p className="text-rose-900/75 text-sm sm:text-base font-medium">
           {subtitle}
         </p>
       </div>
@@ -69,9 +69,9 @@ export function ServiceShowcase({
           return (
             <div
               key={item.id}
-              className="showcase-card min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink rounded-2xl overflow-hidden border border-sky-pastel/20 bg-navy-dark shadow-xl hover:border-pink-accent/40 hover:shadow-[0_10px_30px_-10px_rgba(232,71,151,0.25)] transition-all duration-300 group flex flex-col"
+              className="showcase-card min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink rounded-3xl overflow-hidden border border-rose-200/80 bg-white/90 backdrop-blur-md shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:border-pink-accent/50 hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] transition-all duration-300 group flex flex-col"
             >
-              <div className="relative w-full aspect-video overflow-hidden bg-navy-deepest">
+              <div className="relative w-full aspect-video overflow-hidden bg-[#FFF0F4]">
                 <Image
                   src={item.thumbnailUrl}
                   alt={itemTitle}
@@ -89,17 +89,17 @@ export function ServiceShowcase({
 
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-beige mb-2 group-hover:text-pink-light transition-colors">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-rose-950 mb-2 group-hover:text-pink-accent transition-colors">
                     {itemTitle}
                   </h3>
-                  <p className="text-xs sm:text-sm text-beige/70 line-clamp-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-rose-900/70 line-clamp-2 leading-relaxed font-sans">
                     {itemDesc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-sky-pastel/10 flex items-center justify-between text-xs text-sky-pastel/60">
+                <div className="pt-4 mt-4 border-t border-rose-100 flex items-center justify-between text-xs text-rose-900/60 font-medium">
                   <span>{item.date}</span>
-                  <span className="text-pink-accent font-medium group-hover:translate-x-0.5 transition-transform">
+                  <span className="text-pink-accent font-semibold group-hover:translate-x-0.5 transition-transform">
                     {item.platform}
                   </span>
                 </div>

@@ -74,17 +74,17 @@ export function IntroScreen() {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-navy select-none"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FFF8F9] select-none"
     >
       <div
         ref={logoRef}
-        className="font-serif text-8xl md:text-9xl font-bold text-pink-accent mb-4 tracking-tighter"
+        className="font-display text-8xl md:text-9xl font-bold bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent bg-clip-text text-transparent mb-4 tracking-tighter"
       >
         R
       </div>
       <div
         ref={textRef}
-        className="text-lg md:text-xl font-medium tracking-[0.3em] uppercase text-beige flex"
+        className="text-lg md:text-xl font-medium tracking-[0.3em] uppercase text-rose-950/80 flex"
       >
         {brandText.map((char, index) => (
           <span key={`${char}-${index}`} className="intro-letter inline-block">

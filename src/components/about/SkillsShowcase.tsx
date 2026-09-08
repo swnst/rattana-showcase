@@ -107,7 +107,7 @@ export function SkillsShowcase() {
       <div className="text-center mb-12">
         <h2
           ref={headingRef}
-          className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 tracking-tight"
         >
           {t('skillsTitle')}
         </h2>
@@ -117,15 +117,15 @@ export function SkillsShowcase() {
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className="skill-card bg-navy-dark border border-sky-pastel/20 rounded-xl p-6 transition-all duration-300 hover:border-pink-accent/50 hover:shadow-[0_0_25px_rgba(232,71,151,0.2)] hover:-translate-y-1 group"
+            className="skill-card bg-white/85 backdrop-blur-md border border-rose-200/80 rounded-3xl p-6 sm:p-7 shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] hover:border-pink-accent/50 transition-all duration-300 hover:-translate-y-1 group"
           >
-            <div className="mb-4 select-none group-hover:scale-110 transition-transform duration-300 inline-block p-3 rounded-lg bg-navy/60 border border-sky-pastel/10">
+            <div className="mb-4 select-none group-hover:scale-110 transition-transform duration-300 inline-block p-3 rounded-2xl bg-rose-50 border border-rose-100">
               {skill.renderIcon()}
             </div>
-            <h3 className="font-inter text-xl font-bold text-white mb-2 group-hover:text-sky-pastel transition-colors">
+            <h3 className="font-display text-xl font-bold text-rose-950 mb-2 group-hover:text-pink-accent transition-colors">
               {t(`skills.${skill.id}.name`)}
             </h3>
-            <p className="font-inter text-sm text-beige/70 leading-relaxed">
+            <p className="font-sans text-sm text-rose-900/70 leading-relaxed">
               {t(`skills.${skill.id}.desc`)}
             </p>
           </div>

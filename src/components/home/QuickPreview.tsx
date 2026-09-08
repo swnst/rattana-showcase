@@ -117,12 +117,12 @@ export function QuickPreview() {
   return (
     <section
       ref={containerRef}
-      className="py-20 md:py-32 relative bg-navy-dark/50 overflow-hidden"
+      className="py-20 md:py-32 relative bg-gradient-to-b from-[#FFF8F9] to-[#FFF0F4] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2
           ref={titleRef}
-          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-center text-beige mb-12 md:mb-16 tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center text-rose-950 mb-12 md:mb-16 tracking-tight"
         >
           {t('preview.title')}
         </h2>
@@ -142,14 +142,14 @@ export function QuickPreview() {
                     <Badge variant={getBadgeVariant(item.category)}>
                       {item.category}
                     </Badge>
-                    <div className="flex items-center gap-1.5 p-1 rounded-full bg-navy/60">
+                    <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-rose-50 border border-rose-100 text-rose-600">
                       <PlatformMiniIcon platform={item.platform} />
                     </div>
                   </div>
-                  <h3 className="font-serif text-xl md:text-2xl font-semibold text-beige line-clamp-1">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-rose-950 line-clamp-1">
                     {isThai ? item.title.th : item.title.en}
                   </h3>
-                  <p className="text-sm text-sky-pastel/80 line-clamp-2">
+                  <p className="text-sm text-rose-900/70 line-clamp-2">
                     {isThai ? item.description.th : item.description.en}
                   </p>
                 </div>

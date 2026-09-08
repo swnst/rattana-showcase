@@ -38,11 +38,11 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         whileHover={{
           scale: 1.02,
-          boxShadow: '0 10px 30px -10px rgba(148, 194, 218, 0.25)',
+          boxShadow: '0 20px 40px -15px rgba(232, 74, 116, 0.18)',
         }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
-        className={`rounded-2xl overflow-hidden border border-sky-pastel/20 ${
-          isSemiTransparent ? 'bg-navy-dark/60 backdrop-blur-md' : 'bg-navy-dark'
+        className={`rounded-3xl overflow-hidden border border-rose-200/80 ${
+          isSemiTransparent ? 'bg-white/80 backdrop-blur-md shadow-[0_8px_30px_rgba(232,74,116,0.06)]' : 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)]'
         } ${className}`}
         {...rest}
       >

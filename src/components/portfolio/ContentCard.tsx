@@ -55,11 +55,11 @@ export function ContentCard({
       layout
       whileHover={{
         scale: 1.03,
-        boxShadow: '0 0 25px rgba(232, 71, 151, 0.25)',
+        boxShadow: '0 20px 40px -10px rgba(232, 74, 116, 0.22)',
       }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
       onClick={() => onSelect(item)}
-      className={`group relative w-full h-full min-h-[260px] rounded-2xl overflow-hidden cursor-pointer border border-sky-pastel/20 bg-navy-dark select-none ${aspectClass} ${className}`}
+      className={`group relative w-full h-full min-h-[260px] rounded-3xl overflow-hidden cursor-pointer border border-rose-200/80 bg-white shadow-sm select-none ${aspectClass} ${className}`}
     >
       <Image
         src={item.thumbnailUrl}
@@ -69,7 +69,7 @@ export function ContentCard({
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deepest via-navy-deepest/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#201018]/90 via-[#201018]/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
       <div className="absolute top-3 left-3 z-10">
         <Badge variant="pink" className="shadow-md">
@@ -80,19 +80,19 @@ export function ContentCard({
       <div className="absolute top-3 right-3 z-10">
         <div
           aria-label={item.platform}
-          className="w-8 h-8 rounded-full bg-navy-deepest/70 backdrop-blur-md border border-sky-pastel/30 flex items-center justify-center shadow-md transition-transform group-hover:scale-110"
+          className="w-8 h-8 rounded-full bg-white/85 backdrop-blur-md border border-rose-200/80 text-rose-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-110"
         >
           <PlatformIcon platform={item.platform} />
         </div>
       </div>
 
       <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 transform transition-transform duration-300">
-        <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-beige leading-snug line-clamp-2 drop-shadow-md group-hover:text-white">
+        <h3 className="font-display text-base sm:text-lg md:text-xl font-bold text-white leading-snug line-clamp-2 drop-shadow-md">
           {title}
         </h3>
-        <p className="text-xs text-sky-pastel/80 mt-1 flex items-center justify-between">
+        <p className="text-xs text-rose-200/90 mt-1 flex items-center justify-between font-medium">
           <span>{item.date}</span>
-          <span className="text-pink-accent group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
+          <span className="text-pink-light group-hover:translate-x-1 transition-transform inline-flex items-center text-xs font-semibold">
             View &rarr;
           </span>
         </p>

@@ -56,14 +56,14 @@ export function ContactInfo() {
       <div className="max-w-4xl mx-auto px-4">
         <h1
           ref={titleRef}
-          className="font-playfair text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight mb-6"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-6"
         >
           {t('title')}
         </h1>
 
         <p
           ref={subRef}
-          className="font-inter text-lg sm:text-xl text-beige/80 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="font-sans text-lg sm:text-xl text-rose-900/75 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
         >
           {t('subtitle')}
         </p>
@@ -73,7 +73,7 @@ export function ContactInfo() {
             href="https://line.me/R/ti/p/@701zbckv"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 py-4 px-8 text-lg sm:text-xl font-semibold text-white bg-pink-accent rounded-full border border-pink-accent shadow-[0_0_25px_rgba(232,71,151,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(232,71,151,0.7)] cursor-pointer select-none"
+            className="inline-flex items-center gap-3 py-4 px-8 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent rounded-full border border-transparent shadow-[0_4px_20px_rgba(232,74,116,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_30px_rgba(232,74,116,0.5)] cursor-pointer select-none"
           >
             <svg
               viewBox="0 0 24 24"

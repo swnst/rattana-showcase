@@ -10,9 +10,9 @@ export interface BadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  pink: 'bg-pink-accent/15 text-pink-accent border border-pink-accent/30',
-  blue: 'bg-sky-pastel/15 text-sky-pastel border border-sky-pastel/30',
-  beige: 'bg-beige/15 text-beige border border-beige/30',
+  pink: 'bg-rose-100/90 text-rose-800 border border-rose-200/80 shadow-2xs',
+  blue: 'bg-rose-50 text-rose-900/80 border border-rose-100 shadow-2xs',
+  beige: 'bg-white/90 text-rose-950 border border-rose-200/60 shadow-2xs',
 }
 
 export function Badge({ variant = 'blue', children, className = '' }: BadgeProps) {

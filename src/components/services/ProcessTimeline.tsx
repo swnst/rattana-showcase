@@ -82,20 +82,20 @@ export function ProcessTimeline({
   return (
     <section className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-24">
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-beige mb-4 tracking-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight">
           {title}
         </h2>
-        <p className="text-sky-pastel/80 text-sm sm:text-base">
+        <p className="text-rose-900/75 text-sm sm:text-base font-medium">
           {subtitle}
         </p>
       </div>
 
       <div ref={containerRef} className="relative w-full">
-        <div className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-navy-dark border-r border-sky-pastel/20" />
+        <div className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-rose-200/60" />
 
         <div
           ref={lineRef}
-          className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gradient-to-b from-pink-accent via-pink-light to-pink-accent shadow-[0_0_12px_rgba(232,71,151,0.6)] origin-top will-change-transform"
+          className="absolute top-0 bottom-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 bg-gradient-to-b from-pink-accent via-pink-light to-pink-accent shadow-[0_0_12px_rgba(232,74,116,0.5)] origin-top will-change-transform"
         />
 
         <div className="space-y-12 sm:space-y-16">
@@ -116,20 +116,20 @@ export function ProcessTimeline({
                     isEven ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'
                   }`}
                 >
-                  <div className="step-content p-6 rounded-2xl bg-navy-dark/80 border border-sky-pastel/20 backdrop-blur-sm shadow-lg hover:border-pink-accent/40 transition-colors">
-                    <span className="text-xs uppercase tracking-widest text-pink-light font-semibold block mb-1">
+                  <div className="step-content p-6 sm:p-7 rounded-3xl bg-white/90 border border-rose-200/80 backdrop-blur-md shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:border-pink-accent/50 hover:shadow-[0_12px_30px_rgba(232,74,116,0.12)] transition-all">
+                    <span className="text-xs uppercase tracking-widest text-pink-accent font-bold block mb-1">
                       Step 0{stepItem.step}
                     </span>
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-beige mb-2">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-rose-950 mb-2">
                       {stepTitle}
                     </h3>
-                    <p className="text-sm sm:text-base text-beige/75 leading-relaxed">
+                    <p className="text-sm sm:text-base text-rose-900/75 leading-relaxed font-sans">
                       {stepDesc}
                     </p>
                   </div>
                 </div>
 
-                <div className="step-dot absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-auto z-10 w-10 h-10 rounded-full bg-pink-accent text-white font-bold flex items-center justify-center shadow-[0_0_20px_rgba(232,71,151,0.7)] border-2 border-beige will-change-transform select-none">
+                <div className="step-dot absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-auto z-10 w-10 h-10 rounded-full bg-gradient-to-tr from-pink-accent to-pink-light text-white font-bold flex items-center justify-center shadow-[0_4px_16px_rgba(232,74,116,0.4)] border-2 border-white will-change-transform select-none">
                   {stepItem.step}
                 </div>
 

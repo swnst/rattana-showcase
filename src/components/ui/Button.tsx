@@ -29,9 +29,9 @@ type ButtonAsAnchor = BaseButtonProps &
 export type ButtonProps = ButtonAsButton | ButtonAsAnchor
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-pink-accent text-white hover:shadow-[0_0_20px_rgba(232,71,151,0.5)] border border-pink-accent',
-  secondary: 'bg-transparent text-beige border border-beige hover:border-pink-accent hover:text-pink-accent hover:shadow-[0_0_15px_rgba(232,71,151,0.3)]',
-  ghost: 'bg-transparent text-beige hover:text-sky-pastel hover:bg-navy-dark/40',
+  primary: 'bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent text-white shadow-[0_4px_14px_rgba(232,74,116,0.3)] hover:shadow-[0_6px_25px_rgba(232,74,116,0.45)] border border-transparent',
+  secondary: 'bg-white/80 text-rose-950 border border-rose-200/80 hover:border-pink-accent hover:text-pink-accent hover:bg-rose-50/60 shadow-xs',
+  ghost: 'bg-transparent text-rose-900/80 hover:text-pink-accent hover:bg-rose-100/40',
 }
 
 const sizeStyles: Record<ButtonSize, string> = {

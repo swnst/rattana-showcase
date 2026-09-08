@@ -55,10 +55,10 @@ export function BrandCollaboration() {
   return (
     <section ref={containerRef} className="py-12 md:py-20">
       <div ref={headerRef} className="text-center mb-10">
-        <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-3">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 tracking-tight mb-3">
           {t('brandsTitle')}
         </h2>
-        <p className="font-inter text-sm sm:text-base text-beige/60">
+        <p className="font-sans text-sm sm:text-base text-rose-900/60 font-medium">
           {t('brandsPlaceholder')}
         </p>
       </div>
@@ -67,7 +67,7 @@ export function BrandCollaboration() {
         {brands.map((brand) => (
           <div
             key={brand}
-            className="brand-box flex items-center justify-center h-28 sm:h-32 rounded-xl bg-beige/10 border border-sky-pastel/15 text-beige/80 font-inter font-medium text-base sm:text-lg tracking-wide select-none transition-all duration-300 hover:bg-beige/15 hover:border-pink-accent/40 hover:text-white"
+            className="brand-box flex items-center justify-center h-28 sm:h-32 rounded-2xl bg-white/70 backdrop-blur-md border border-rose-200/80 text-rose-950 font-sans font-semibold text-base sm:text-lg tracking-wide select-none shadow-xs transition-all duration-300 hover:bg-white hover:border-pink-accent/50 hover:shadow-[0_10px_25px_rgba(232,74,116,0.1)] hover:-translate-y-0.5"
           >
             {brand}
           </div>

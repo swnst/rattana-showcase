@@ -75,8 +75,8 @@ export function ProfileSection() {
           ref={imageWrapperRef}
           className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[360px] mx-auto lg:mx-0 flex-shrink-0"
         >
-          <div className="absolute -inset-2 bg-gradient-to-tr from-pink-accent/40 via-sky-pastel/20 to-transparent rounded-3xl blur-xl" />
-          <div className="relative aspect-square w-full rounded-2xl overflow-hidden border-2 border-pink-accent/60 shadow-[0_0_35px_rgba(232,71,151,0.25)] bg-navy-dark/60 backdrop-blur-md">
+          <div className="absolute -inset-2 bg-gradient-to-tr from-pink-accent/25 via-[#FFE4EC]/50 to-transparent rounded-3xl blur-xl" />
+          <div className="relative aspect-square w-full rounded-3xl overflow-hidden border-2 border-white/80 shadow-[0_20px_50px_rgba(232,74,116,0.15)] bg-white/80 backdrop-blur-md">
             <Image
               src="/images/profile-placeholder.svg"
               alt={t('profileName')}
@@ -92,19 +92,19 @@ export function ProfileSection() {
         <div className="w-full lg:w-7/12 flex flex-col justify-center">
           <h1
             ref={titleRef}
-            className="font-playfair text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-none mb-3"
+            className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-rose-950 tracking-tight leading-none mb-3"
           >
             {t('profileName')}
           </h1>
 
           <p
             ref={subtitleRef}
-            className="font-inter text-base sm:text-lg md:text-xl text-beige/70 font-medium tracking-wide mb-8"
+            className="font-sans text-base sm:text-lg md:text-xl text-pink-accent font-semibold tracking-wide mb-8"
           >
             {t('profileSubtitle')}
           </p>
 
-          <div ref={bioRef} className="space-y-4 text-beige/90 text-base sm:text-lg leading-relaxed font-inter">
+          <div ref={bioRef} className="space-y-4 text-rose-900/80 text-base sm:text-lg leading-relaxed font-sans">
             <p className="bio-paragraph">
               {t('bio1')}
             </p>

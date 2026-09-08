@@ -81,11 +81,15 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-navy via-navy to-navy-dark py-20 md:py-32"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_65%_30%,rgba(255,182,199,0.45)_0%,rgba(255,235,240,0.25)_50%,transparent_80%),linear-gradient(180deg,#FFF1F4_0%,#FFE4EB_50%,#FFF8F9_100%)] py-20 md:py-32"
     >
-      <div className="max-w-7xl mx-auto px-6 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      {/* Ambient background glow and soft bubble particles */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/30 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-pink-400/20 blur-3xl pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8 relative z-10">
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-none mb-6">
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold text-rose-950 tracking-tight leading-none mb-6">
             {name.split('').map((char, index) => (
               <span key={index} className="hero-char inline-block will-change-transform">
                 {char}
@@ -94,7 +98,7 @@ export function HeroSection() {
           </h1>
           <p
             ref={taglineRef}
-            className="text-lg md:text-xl text-beige/70 font-sans tracking-wide mb-8"
+            className="text-lg md:text-xl text-rose-900/80 font-sans font-medium tracking-wide mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
             {t('hero.tagline')}
           </p>
@@ -115,7 +119,7 @@ export function HeroSection() {
         <div className="flex-1 flex justify-center lg:justify-end">
           <div
             ref={imageWrapperRef}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-sky-pastel/20 bg-navy-dark/40"
+            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(232,74,116,0.18)] border-2 border-white/80 bg-white/70 backdrop-blur-md"
           >
             <div ref={imageRef} className="relative w-full h-full scale-105">
               <Image

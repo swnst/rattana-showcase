@@ -61,7 +61,7 @@ export function Navbar() {
         </Link>
 
         {/* --- Desktop Floating Capsule Navigation --- */}
-        <nav className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-dark/75 backdrop-blur-xl border border-pink-accent/20 shadow-[0_8px_30px_rgba(18,6,11,0.5)]">
+        <nav className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/85 backdrop-blur-xl border border-rose-200/70 shadow-[0_4px_20px_rgba(232,74,116,0.08)]">
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
@@ -70,14 +70,14 @@ export function Navbar() {
                 href={item.href}
                 className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 select-none ${
                   isActive
-                    ? 'text-white'
-                    : 'text-beige/80 hover:text-white hover:bg-pink-accent/10'
+                    ? 'text-white font-semibold'
+                    : 'text-[#201018]/80 hover:text-pink-accent hover:bg-pink-accent/5'
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeNavPill"
-                    className="absolute inset-0 bg-gradient-to-r from-pink-accent to-pink-light rounded-full shadow-[0_0_15px_rgba(232,74,116,0.45)]"
+                    className="absolute inset-0 bg-gradient-to-r from-pink-accent to-pink-light rounded-full shadow-[0_0_15px_rgba(232,74,116,0.35)]"
                     transition={{ type: 'spring', stiffness: 420, damping: 32 }}
                   />
                 )}
@@ -93,7 +93,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-navy-dark/60 backdrop-blur-md border border-pink-accent/25 text-beige hover:border-pink-accent hover:text-pink-light hover:bg-pink-accent/10 transition-all cursor-pointer shadow-sm"
+            className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/80 backdrop-blur-md border border-rose-200/80 text-[#201018] hover:border-pink-accent hover:text-pink-accent hover:bg-pink-accent/5 transition-all cursor-pointer shadow-xs"
             aria-label="Toggle language"
           >
             {locale === 'en' ? 'TH' : 'EN'}
@@ -103,7 +103,7 @@ export function Navbar() {
             href="https://line.me/R/ti/p/@701zbckv"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent shadow-[0_0_20px_rgba(232,74,116,0.35)] hover:shadow-[0_0_25px_rgba(232,74,116,0.55)] hover:scale-105 active:scale-95 transition-all"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent shadow-[0_4px_14px_rgba(232,74,116,0.3)] hover:shadow-[0_6px_20px_rgba(232,74,116,0.45)] hover:scale-105 active:scale-95 transition-all"
           >
             <span>Line Work</span>
           </a>
@@ -111,20 +111,20 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-navy-dark/80 border border-pink-accent/20 text-beige hover:bg-pink-accent/10 transition-colors focus:outline-none cursor-pointer"
+            className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-white/80 border border-rose-200/80 text-[#201018] hover:bg-pink-accent/5 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle mobile menu"
           >
             <motion.span
               animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-              className="w-5 h-0.5 bg-beige block transition-transform origin-center"
+              className="w-5 h-0.5 bg-[#201018] block transition-transform origin-center"
             />
             <motion.span
               animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-5 h-0.5 bg-beige block my-1 transition-opacity"
+              className="w-5 h-0.5 bg-[#201018] block my-1 transition-opacity"
             />
             <motion.span
               animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-              className="w-5 h-0.5 bg-beige block transition-transform origin-center"
+              className="w-5 h-0.5 bg-[#201018] block transition-transform origin-center"
             />
           </button>
         </div>
@@ -140,7 +140,7 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed inset-x-4 top-20 z-40 p-4 md:hidden"
           >
-            <div className="rounded-3xl p-6 bg-navy-dark/95 backdrop-blur-2xl border border-pink-accent/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)] flex flex-col gap-3">
+            <div className="rounded-3xl p-6 bg-white/95 backdrop-blur-2xl border border-rose-200 shadow-[0_12px_40px_rgba(232,74,116,0.15)] flex flex-col gap-3">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -151,7 +151,7 @@ export function Navbar() {
                     className={`px-4 py-3 rounded-2xl text-base font-semibold transition-all ${
                       isActive
                         ? 'bg-gradient-to-r from-pink-accent to-pink-light text-white shadow-md'
-                        : 'text-beige hover:bg-white/5'
+                        : 'text-[#201018] hover:bg-rose-50'
                     }`}
                   >
                     {t(item.key)}
@@ -159,7 +159,7 @@ export function Navbar() {
                 )
               })}
 
-              <div className="pt-3 border-t border-pink-accent/15 mt-1">
+              <div className="pt-3 border-t border-rose-100 mt-1">
                 <a
                   href="https://line.me/R/ti/p/@701zbckv"
                   target="_blank"

@@ -106,7 +106,7 @@ export function EmbedModal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-navy-deepest/80 backdrop-blur-md"
+            className="fixed inset-0 bg-[#201018]/50 backdrop-blur-md"
             aria-hidden="true"
           />
 
@@ -119,9 +119,9 @@ export function EmbedModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-navy-dark border border-sky-pastel/25 shadow-2xl overflow-hidden"
+            className="relative z-10 w-full max-w-2xl max-h-[90vh] flex flex-col rounded-3xl bg-white border border-rose-200 shadow-2xl overflow-hidden"
           >
-            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-sky-pastel/15 bg-navy/40">
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-rose-100 bg-[#FFF8F9]">
               <div className="flex items-center gap-2">
                 <Badge variant="pink">{item.category}</Badge>
                 <Badge variant="blue">{item.platform}</Badge>
@@ -129,7 +129,7 @@ export function EmbedModal({
               <button
                 onClick={onClose}
                 aria-label={closeLabel}
-                className="p-1.5 rounded-full text-beige/70 hover:text-white hover:bg-navy/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-accent"
+                className="p-1.5 rounded-full text-rose-900/70 hover:text-rose-950 hover:bg-rose-100/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-accent"
               >
                 <svg
                   className="w-5 h-5"
@@ -144,7 +144,7 @@ export function EmbedModal({
             </div>
 
             <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5">
-              <div className="relative w-full rounded-xl overflow-hidden bg-navy-deepest border border-sky-pastel/10">
+              <div className="relative w-full rounded-2xl overflow-hidden bg-rose-50 border border-rose-200/60">
                 {item.embedUrl ? (
                   <div className="relative w-full aspect-video">
                     <iframe
@@ -156,31 +156,31 @@ export function EmbedModal({
                     />
                   </div>
                 ) : (
-                  <div className="relative w-full aspect-video flex items-center justify-center bg-navy-deepest/90">
+                  <div className="relative w-full aspect-video flex items-center justify-center bg-rose-100/50">
                     <Image
                       src={item.thumbnailUrl}
                       alt={title}
                       fill
                       sizes="(max-width: 768px) 100vw, 672px"
-                      className="object-cover opacity-80"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deepest via-navy-deepest/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
                 )}
               </div>
 
               <div>
-                <h3 id="modal-title" className="text-xl sm:text-2xl font-serif font-bold text-beige mb-2">
+                <h3 id="modal-title" className="text-xl sm:text-2xl font-display font-bold text-rose-950 mb-2">
                   {title}
                 </h3>
-                <p className="text-sm sm:text-base text-beige/80 leading-relaxed">
+                <p className="text-sm sm:text-base text-rose-900/80 leading-relaxed">
                   {description}
                 </p>
               </div>
             </div>
 
-            <div className="p-4 sm:p-5 border-t border-sky-pastel/15 bg-navy/40 flex items-center justify-between gap-3">
-              <span className="text-xs text-sky-pastel/70">{item.date}</span>
+            <div className="p-4 sm:p-5 border-t border-rose-100 bg-[#FFF8F9] flex items-center justify-between gap-3">
+              <span className="text-xs text-rose-800/60">{item.date}</span>
               <div className="flex items-center gap-3">
                 <Button variant="ghost" size="sm" onClick={onClose}>
                   {closeLabel}

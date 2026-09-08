@@ -59,7 +59,7 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
   const subtitle = t('subtitle') || 'A collection of my best work'
 
   return (
-    <div className="min-h-screen bg-navy py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_50%_0%,rgba(255,182,199,0.35)_0%,rgba(255,235,240,0.2)_50%,transparent_75%),linear-gradient(180deg,#FFF1F4_0%,#FFF8F9_100%)] py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="mb-4">
@@ -68,9 +68,9 @@ export default async function PortfolioPage({ params }: PortfolioPageProps) {
           <AnimatedText
             text={title}
             tag="h1"
-            className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-beige tracking-tight mb-4"
+            className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold text-rose-950 tracking-tight mb-4"
           />
-          <p className="text-sky-pastel/80 text-base sm:text-lg">
+          <p className="text-rose-900/75 text-base sm:text-lg font-medium">
             {subtitle}
           </p>
         </div>

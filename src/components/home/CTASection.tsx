@@ -68,18 +68,18 @@ export function CTASection() {
   return (
     <section
       ref={containerRef}
-      className="py-20 md:py-32 relative bg-gradient-to-b from-navy-dark to-navy overflow-hidden"
+      className="py-20 md:py-32 relative bg-gradient-to-b from-[#FFF0F4] via-[#FFE4EC]/50 to-[#FFF8F9] overflow-hidden border-t border-rose-200/50"
     >
-      <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+      <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center relative z-10">
         <h2
           ref={titleRef}
-          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-beige mb-4 tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 mb-4 tracking-tight"
         >
           {t('title')}
         </h2>
         <p
           ref={subtitleRef}
-          className="text-base sm:text-lg md:text-xl text-sky-pastel/90 max-w-xl mb-8 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-rose-900/75 max-w-xl mb-8 leading-relaxed font-medium"
         >
           {t('subtitle')}
         </p>

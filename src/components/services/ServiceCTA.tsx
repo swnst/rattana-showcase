@@ -48,19 +48,19 @@ export function ServiceCTA({
   const lineUrl = `https://line.me/R/ti/p/${lineId}`
 
   return (
-    <section className="w-full py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-dark to-navy-deepest border-t border-sky-pastel/15">
+    <section className="w-full py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFF8F9] to-[#FFF0F4] border-t border-rose-200/60">
       <div
         ref={containerRef}
-        className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-navy-dark/90 via-navy/80 to-navy-dark/90 border border-sky-pastel/25 shadow-2xl text-center relative overflow-hidden"
+        className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-white via-rose-50/70 to-white border border-rose-200/80 shadow-[0_20px_50px_rgba(232,74,116,0.1)] text-center relative overflow-hidden"
       >
-        <div className="absolute -top-24 -right-24 w-60 h-60 bg-pink-accent/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-sky-pastel/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-60 h-60 bg-rose-200/40 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-60 h-60 bg-pink-300/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 space-y-6">
-          <h2 className="cta-animate font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-beige tracking-tight leading-tight">
+          <h2 className="cta-animate font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 tracking-tight leading-tight">
             {title}
           </h2>
-          <p className="cta-animate text-base sm:text-lg text-sky-pastel/90 max-w-xl mx-auto">
+          <p className="cta-animate text-base sm:text-lg text-rose-900/75 max-w-xl mx-auto font-medium">
             {subtitle}
           </p>
           <div className="cta-animate pt-4">
@@ -72,7 +72,7 @@ export function ServiceCTA({
                 rel="noopener noreferrer"
                 variant="primary"
                 size="lg"
-                className="font-semibold text-base sm:text-lg px-8 py-4 shadow-[0_0_25px_rgba(232,71,151,0.5)]"
+                className="font-semibold text-base sm:text-lg px-8 py-4 shadow-[0_4px_16px_rgba(232,74,116,0.35)]"
               >
                 <span className="flex items-center gap-3">
                   <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export function ServiceCTA({
               </Button>
             </MagneticElement>
           </div>
-          <p className="cta-animate text-xs text-sky-pastel/60 tracking-wider">
+          <p className="cta-animate text-xs text-rose-900/60 tracking-wider font-semibold">
             Line ID: {lineId}
           </p>
         </div>

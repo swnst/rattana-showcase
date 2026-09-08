@@ -99,7 +99,7 @@ export function SocialGrid() {
       <div className="text-center mb-12">
         <h2
           ref={headingRef}
-          className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-rose-950 tracking-tight"
         >
           {t('socialTitle')}
         </h2>
@@ -109,16 +109,16 @@ export function SocialGrid() {
         {socialLinks.map((social) => (
           <div key={social.platform} className="social-grid-card h-full">
             <MagneticElement strength={0.2} className="w-full h-full">
-              <div className="w-full h-full flex flex-col items-center justify-between p-6 sm:p-8 bg-navy-dark rounded-2xl border border-sky-pastel/20 transition-all duration-300 hover:scale-[1.03] hover:border-pink-accent/60 hover:shadow-[0_0_30px_rgba(232,71,151,0.25)] group">
-                <div className="text-sky-pastel group-hover:text-pink-accent group-hover:scale-110 transition-all duration-300 mb-4">
+              <div className="w-full h-full flex flex-col items-center justify-between p-6 sm:p-8 bg-white/85 backdrop-blur-md rounded-3xl border border-rose-200/80 shadow-[0_4px_20px_rgba(232,74,116,0.06)] transition-all duration-300 hover:scale-[1.03] hover:border-pink-accent/50 hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] group">
+                <div className="text-pink-accent group-hover:scale-110 transition-all duration-300 mb-4 p-3 rounded-2xl bg-rose-50 border border-rose-100">
                   <PlatformIcon platform={social.platform} />
                 </div>
 
                 <div className="text-center mb-6">
-                  <h3 className="font-inter text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-sky-pastel transition-colors">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-rose-950 mb-1 group-hover:text-pink-accent transition-colors">
                     {social.label}
                   </h3>
-                  <p className="font-inter text-xs sm:text-sm text-beige/60 truncate max-w-[140px] sm:max-w-[180px]">
+                  <p className="font-sans text-xs sm:text-sm text-rose-900/60 font-medium truncate max-w-[140px] sm:max-w-[180px]">
                     {usernames[social.platform]}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export function SocialGrid() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-5 py-2 text-xs sm:text-sm font-semibold text-white bg-transparent border border-sky-pastel/40 rounded-full transition-all duration-300 group-hover:bg-pink-accent group-hover:border-pink-accent group-hover:shadow-[0_0_15px_rgba(232,71,151,0.4)]"
+                  className="inline-flex items-center justify-center px-5 py-2 text-xs sm:text-sm font-semibold text-rose-950 bg-rose-50 border border-rose-200 rounded-full transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-pink-accent group-hover:to-pink-light group-hover:text-white group-hover:border-transparent group-hover:shadow-[0_4px_14px_rgba(232,74,116,0.35)]"
                 >
                   {t('visitButton')}
                 </a>

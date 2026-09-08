@@ -28,7 +28,7 @@ export function FilterTabs({
 
   return (
     <div className="w-full flex items-center justify-start md:justify-center overflow-x-auto py-2 no-scrollbar">
-      <div className="flex items-center gap-2 sm:gap-3 p-1 rounded-full bg-navy-dark/40 border border-sky-pastel/15 backdrop-blur-md">
+      <div className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-full bg-white/80 border border-rose-200/80 backdrop-blur-md shadow-xs">
         {TAB_KEYS.map((tab) => {
           const isActive = activeCategory === tab.id
           const label = t(tab.key)
@@ -39,14 +39,14 @@ export function FilterTabs({
               onClick={() => onSelectCategory(tab.id)}
               className={`relative px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors cursor-pointer select-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-accent ${
                 isActive
-                  ? 'text-white'
-                  : 'text-beige hover:text-white border border-beige/30 hover:border-beige/60 bg-transparent'
+                  ? 'text-white font-semibold'
+                  : 'text-rose-950/80 hover:text-pink-accent hover:bg-rose-50/60 bg-transparent'
               }`}
             >
               {isActive && (
                 <motion.div
                   layoutId="activeFilterIndicator"
-                  className="absolute inset-0 bg-pink-accent rounded-full shadow-[0_0_15px_rgba(232,71,151,0.5)]"
+                  className="absolute inset-0 bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent rounded-full shadow-[0_4px_14px_rgba(232,74,116,0.35)]"
                   transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 />
               )}

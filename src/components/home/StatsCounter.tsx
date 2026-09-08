@@ -26,12 +26,12 @@ function StatCard({
   })
 
   return (
-    <div className="stat-card flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl bg-navy-dark/40 border border-sky-pastel/15 backdrop-blur-sm hover:border-pink-accent/40 transition-colors duration-300 text-center">
-      <span className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-beige mb-2 tracking-tight">
+    <div className="stat-card flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-white/80 border border-rose-200/70 backdrop-blur-md hover:border-pink-accent/40 shadow-[0_10px_30px_rgba(232,74,116,0.06)] hover:shadow-[0_15px_35px_rgba(232,74,116,0.12)] transition-all duration-300 text-center group">
+      <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-accent via-[#FF6B93] to-pink-accent mb-2 tracking-tight">
         {count.toLocaleString()}
         {item.suffix}
       </span>
-      <span className="text-xs sm:text-sm md:text-base text-sky-pastel/80 font-medium">
+      <span className="text-xs sm:text-sm md:text-base text-rose-900/70 font-medium">
         {label}
       </span>
     </div>
@@ -75,7 +75,7 @@ export function StatsCounter() {
   return (
     <section
       ref={containerRef}
-      className="bg-navy-deepest py-20 md:py-32 relative overflow-hidden"
+      className="bg-[#FFF0F4] py-20 md:py-32 relative overflow-hidden border-y border-rose-200/50"
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="sr-only">{t('title')}</h2>

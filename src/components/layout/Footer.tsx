@@ -15,7 +15,7 @@ export function Footer() {
   const externalSocials = socialLinks.filter((item) => item.platform !== 'line')
 
   return (
-    <footer className="bg-navy-deepest border-t border-sky-pastel/10 py-12 px-6">
+    <footer className="bg-[#FFF0F4] border-t border-rose-200/60 py-12 px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export function Footer() {
       >
         {/* --- Brand & Contact --- */}
         <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="font-serif text-2xl font-bold tracking-tight text-pink-accent">
+          <span className="font-display text-2xl font-bold tracking-tight bg-gradient-to-r from-pink-accent to-pink-light bg-clip-text text-transparent">
             rattana
           </span>
           {workLink && (
@@ -33,7 +33,7 @@ export function Footer() {
               href={workLink.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-sky-pastel hover:text-pink-accent transition-colors underline underline-offset-4"
+              className="text-sm font-medium text-rose-900/70 hover:text-pink-accent transition-colors underline underline-offset-4"
             >
               {t('forWork')}
             </a>
@@ -48,7 +48,7 @@ export function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-beige hover:text-pink-accent transition-colors"
+                className="text-sm font-medium text-rose-950/80 hover:text-pink-accent transition-colors"
                 aria-label={social.label}
               >
                 {social.label}
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
 
         {/* --- Copyright --- */}
-        <p className="text-xs text-beige/60 tracking-wider">
+        <p className="text-xs text-rose-900/60 tracking-wider">
           &copy; {currentYear} {t('brand')}. {t('rights')}
         </p>
       </motion.div>

@@ -81,12 +81,12 @@ export function ContentTypes() {
   return (
     <section
       ref={containerRef}
-      className="py-20 md:py-32 relative bg-navy overflow-hidden"
+      className="py-20 md:py-32 relative bg-gradient-to-b from-[#FFF8F9] via-[#FFF0F4] to-[#FFF8F9] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <h2
           ref={titleRef}
-          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-center text-beige mb-12 md:mb-20 tracking-tight"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center text-rose-950 mb-12 md:mb-20 tracking-tight"
         >
           {t('title')}
         </h2>
@@ -116,7 +116,7 @@ export function ContentTypes() {
           {/* Center Image */}
           <div
             ref={imageRef}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-sky-pastel/20 bg-navy-dark shrink-0"
+            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(232,74,116,0.15)] border-2 border-white/80 bg-white/70 backdrop-blur-md shrink-0"
           >
             <Image
               src="/images/placeholder-1.svg"
@@ -125,7 +125,7 @@ export function ContentTypes() {
               sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deepest/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-rose-950/20 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Right / Bottom Pills */}
