@@ -13,7 +13,7 @@
   },
   "home": {
     "title": "Rattana Portfolio",
-    "subtitle": "Creative Content Creator & Tech Specialist",
+    "subtitle": "Creative Content Creator & Video Editor",
     "description": "Welcome to my portfolio showcasing videos, lifestyle, education, and creative projects.",
     "hero": {
       "name": "rattana_music",
@@ -83,7 +83,6 @@
       "videoEditing": { "name": "Video Editing", "desc": "Professional editing for social media" },
       "cosplay": { "name": "Cosplay", "desc": "Character transformation & creative photography" },
       "education": { "name": "Education Content", "desc": "Study tips & engineering knowledge" },
-      "webDev": { "name": "Web Development", "desc": "Website creation & design" },
       "content": { "name": "Content Creation", "desc": "Multi-platform content strategy" },
       "lifestyle": { "name": "Lifestyle", "desc": "Daily life & personal branding" }
     },

@@ -20,7 +20,7 @@ const notoSansThai = Noto_Sans_Thai({
 
 export const metadata: Metadata = {
   title: 'Rattana | Creative Portfolio',
-  description: 'Portfolio of Rattana - Content Creator, Video Editor & Tech Specialist',
+  description: 'Portfolio of Rattana - Content Creator & Video Editor',
 }
 
 interface RootLayoutProps {

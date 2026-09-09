@@ -11,7 +11,6 @@
         "videoEditing": { "name": "Video Editing", "desc": "Professional editing for social media" },
         "cosplay": { "name": "Cosplay", "desc": "Character transformation & creative photography" },
         "education": { "name": "Education Content", "desc": "Study tips & engineering knowledge" },
-        "webDev": { "name": "Web Development", "desc": "Website creation & design" },
         "content": { "name": "Content Creation", "desc": "Multi-platform content strategy" },
         "lifestyle": { "name": "Lifestyle", "desc": "Daily life & personal branding" }
       },
@@ -38,7 +37,6 @@
         "videoEditing": { "name": "ตัดต่อวิดีโอ", "desc": "ตัดต่อวิดีโอคุณภาพสำหรับ social media" },
         "cosplay": { "name": "คอสเพลย์", "desc": "แปลงโฉมเป็นตัวละคร & ถ่ายภาพสร้างสรรค์" },
         "education": { "name": "คอนเทนต์การเรียน", "desc": "เทคนิคการเรียน & ความรู้วิศวกรรม" },
-        "webDev": { "name": "พัฒนาเว็บไซต์", "desc": "สร้างและออกแบบเว็บไซต์" },
         "content": { "name": "สร้างคอนเทนต์", "desc": "กลยุทธ์คอนเทนต์หลายแพลตฟอร์ม" },
         "lifestyle": { "name": "ไลฟ์สไตล์", "desc": "ชีวิตประจำวัน & personal branding" }
       },

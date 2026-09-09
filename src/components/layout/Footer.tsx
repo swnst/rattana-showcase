@@ -74,7 +74,7 @@ export function Footer() {
           rattana_music
         </h2>
         <p className="font-sans text-sm md:text-base font-medium text-rose-900/70 max-w-md mx-auto mb-8 leading-relaxed">
-          Content Creator, Video Editor & Tech Specialist
+          Content Creator & Video Editor
         </p>
 
         {/* Centered Navigation Capsule */}

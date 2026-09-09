@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { gsap } from '@/lib/gsap'
 import { useGSAP } from '@/hooks/useGSAP'
 
-type SkillKey = 'videoEditing' | 'cosplay' | 'education' | 'webDev' | 'content' | 'lifestyle'
+type SkillKey = 'videoEditing' | 'cosplay' | 'education' | 'content' | 'lifestyle'
 
 interface SkillItem {
   id: SkillKey
@@ -35,14 +35,6 @@ const skills: SkillItem[] = [
     renderIcon: () => (
       <svg className="w-8 h-8 text-pink-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-  },
-  {
-    id: 'webDev',
-    renderIcon: () => (
-      <svg className="w-8 h-8 text-sky-pastel" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
   },
@@ -128,11 +120,11 @@ export function SkillsShowcase() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
         {skills.map((skill) => (
           <div
             key={skill.id}
-            className="skill-card bg-white/85 backdrop-blur-md border border-rose-200/80 rounded-3xl p-6 sm:p-7 shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] hover:border-pink-accent/50 transition-all duration-300 hover:-translate-y-1 group"
+            className="skill-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white/85 backdrop-blur-md border border-rose-200/80 rounded-3xl p-6 sm:p-7 shadow-[0_4px_20px_rgba(232,74,116,0.06)] hover:shadow-[0_15px_35px_rgba(232,74,116,0.14)] hover:border-pink-accent/50 transition-all duration-300 hover:-translate-y-1 group"
           >
             <div className="mb-4 select-none group-hover:scale-110 transition-transform duration-300 inline-block p-3 rounded-2xl bg-rose-50 border border-rose-100">
               {skill.renderIcon()}
