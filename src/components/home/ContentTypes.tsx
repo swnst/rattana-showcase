@@ -9,13 +9,12 @@ import { gsap } from '@/lib/gsap'
 import { useGSAP } from '@/hooks/useGSAP'
 
 interface ContentItem {
-  id: 'education' | 'website' | 'lifestyle' | 'editing' | 'cosplay'
+  id: 'education' | 'lifestyle' | 'editing' | 'cosplay'
   variant: BadgeVariant
 }
 
 const contentCategories: ContentItem[] = [
   { id: 'education', variant: 'pink' },
-  { id: 'website', variant: 'blue' },
   { id: 'lifestyle', variant: 'pink' },
   { id: 'editing', variant: 'blue' },
   { id: 'cosplay', variant: 'pink' },
@@ -160,14 +159,6 @@ export function ContentTypes() {
                 className="text-sm md:text-base px-5 py-2.5"
               >
                 {t(contentCategories[3].id)}
-              </Badge>
-            </div>
-            <div className="content-pill">
-              <Badge
-                variant={contentCategories[4].variant}
-                className="text-sm md:text-base px-5 py-2.5"
-              >
-                {t(contentCategories[4].id)}
               </Badge>
             </div>
           </div>

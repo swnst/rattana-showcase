@@ -1,5 +1,5 @@
 // --- Portfolio Items Data ---
-export type ContentCategory = 'all' | 'education' | 'lifestyle' | 'cosplay' | 'website'
+export type ContentCategory = 'all' | 'education' | 'lifestyle' | 'cosplay'
 export type Platform = 'instagram' | 'tiktok' | 'lemon8'
 
 export interface PortfolioItem {
@@ -42,18 +42,9 @@ export const portfolioItems: PortfolioItem[] = [
     date: '2025-01-28',
   },
   {
-    id: '4',
-    title: { en: 'Web Dev Journey & Portfolio', th: 'การเดินทางสายเว็บเดฟ' },
-    description: { en: 'Building interactive modern web experiences', th: 'สร้างประสบการณ์เว็บสมัยใหม่ที่น่าประทับใจ' },
-    category: 'website',
-    platform: 'lemon8',
-    thumbnailUrl: '/images/placeholder-4.svg',
-    date: '2025-02-02',
-  },
-  {
     id: '5',
-    title: { en: 'Coding Routine & Tools', th: 'รูทีนการเขียนโค้ดและเครื่องมือ' },
-    description: { en: 'My favorite developer setup and daily productivity', th: 'เซ็ตอัปโต๊ะทำงานและเครื่องมือช่วยเพิ่มประสิทธิภาพ' },
+    title: { en: 'Study Vlog & Productivity', th: 'จัดโต๊ะอ่านหนังสือ & โฟกัสการเรียน' },
+    description: { en: 'Study routine and productivity tips', th: 'แชร์เทคนิคการจัดเวลาอ่านหนังสือและโฟกัส' },
     category: 'education',
     platform: 'lemon8',
     thumbnailUrl: '/images/placeholder-5.svg',
@@ -76,14 +67,5 @@ export const portfolioItems: PortfolioItem[] = [
     platform: 'tiktok',
     thumbnailUrl: '/images/placeholder-7.svg',
     date: '2025-02-25',
-  },
-  {
-    id: '8',
-    title: { en: 'Creative Agency Landing Page', th: 'แลนดิ้งเพจครีเอทีฟเอเจนซี' },
-    description: { en: 'High performance Next.js and animated UI design', th: 'การออกแบบ UI และแอนิเมชันระดับพรีเมียมด้วย Next.js' },
-    category: 'website',
-    platform: 'lemon8',
-    thumbnailUrl: '/images/placeholder-8.svg',
-    date: '2025-03-01',
   },
 ]

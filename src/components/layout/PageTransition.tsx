@@ -16,7 +16,35 @@ export function PageTransition({ children }: PageTransitionProps) {
   const { lenis } = useLenisContext()
 
   useEffect(() => {
-    // Reset scroll instantly without fighting RAF
+    // Check if scroll should be preserved (e.g. on language change)
+    if (typeof window !== 'undefined') {
+      const savedPos = sessionStorage.getItem('preserve_scroll_pos')
+      if (savedPos !== null) {
+        sessionStorage.removeItem('preserve_scroll_pos')
+        const targetY = parseFloat(savedPos)
+        if (!isNaN(targetY)) {
+          if (lenis) {
+            lenis.scrollTo(targetY, { immediate: true })
+          }
+          window.scrollTo({ top: targetY, behavior: 'instant' })
+          document.documentElement.scrollTop = targetY
+          document.body.scrollTop = targetY
+
+          let rafId: number
+          const timer = setTimeout(() => {
+            rafId = requestAnimationFrame(() => {
+              ScrollTrigger.refresh()
+            })
+          }, 100)
+          return () => {
+            clearTimeout(timer)
+            if (rafId) cancelAnimationFrame(rafId)
+          }
+        }
+      }
+    }
+
+    // Normal page navigation -> Reset scroll to top
     if (lenis) {
       lenis.scrollTo(0, { immediate: true })
     }

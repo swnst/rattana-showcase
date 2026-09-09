@@ -124,9 +124,13 @@ export function ServicesList({
               <div className="pt-4 border-t border-rose-100">
                 <Button
                   as="a"
-                  href="https://line.me/R/ti/p/@701zbckv"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={
+                    service.id === 'web-development'
+                      ? 'mailto:suwannasit.work@gmail.com?subject=Website%20Inquiry%20from%20Rattana%20Showcase'
+                      : 'https://line.me/R/ti/p/@701zbckv'
+                  }
+                  target={service.id === 'web-development' ? undefined : '_blank'}
+                  rel={service.id === 'web-development' ? undefined : 'noopener noreferrer'}
                   variant={service.popular ? 'primary' : 'secondary'}
                   className="w-full justify-center font-semibold text-sm py-3"
                 >

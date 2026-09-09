@@ -7,6 +7,7 @@ import { StatsCounter } from '@/components/home/StatsCounter'
 import { ContentTypes } from '@/components/home/ContentTypes'
 import { QuickPreview } from '@/components/home/QuickPreview'
 import { CTASection } from '@/components/home/CTASection'
+import { RubberDivider } from '@/components/ui/RubberDivider'
 
 interface HomePageProps {
   params: Promise<{ locale: string }>
@@ -61,7 +62,9 @@ export default async function HomePage({ params }: HomePageProps) {
       <HeroSection />
       <SocialLinks />
       <StatsCounter />
+      <RubberDivider className="my-2" />
       <ContentTypes />
+      <RubberDivider className="my-2" />
       <QuickPreview />
       <CTASection />
     </div>

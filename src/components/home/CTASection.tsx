@@ -85,6 +85,26 @@ export function CTASection() {
       ref={containerRef}
       className="py-20 md:py-32 relative bg-gradient-to-b from-[#FFF0F4] via-[#FFE4EC]/50 to-[#FFF8F9] overflow-hidden border-t border-rose-200/50"
     >
+      {/* Floating Decorative Luxury Starlets */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+        <div className="absolute top-1/4 left-[8%] w-6 h-6 text-rose-400/40 animate-pulse">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-1/4 right-[10%] w-7 h-7 text-rose-500/30 animate-pulse [animation-delay:1.2s]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
+          </svg>
+        </div>
+        <div className="absolute top-1/3 right-[20%] w-4 h-4 text-pink-400/35 animate-pulse [animation-delay:0.6s]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" />
+          </svg>
+        </div>
+        <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-radial from-rose-300/25 via-pink-200/10 to-transparent blur-3xl" />
+      </div>
+
       <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center relative z-10">
         <h2
           ref={titleRef}

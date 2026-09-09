@@ -12,12 +12,11 @@ export interface FilterTabsProps {
   locale?: string
 }
 
-const TAB_KEYS: { id: ContentCategory; key: 'filterAll' | 'filterEducation' | 'filterLifestyle' | 'filterCosplay' | 'filterWebsite' }[] = [
+const TAB_KEYS: { id: ContentCategory; key: 'filterAll' | 'filterEducation' | 'filterLifestyle' | 'filterCosplay' }[] = [
   { id: 'all', key: 'filterAll' },
   { id: 'education', key: 'filterEducation' },
   { id: 'lifestyle', key: 'filterLifestyle' },
   { id: 'cosplay', key: 'filterCosplay' },
-  { id: 'website', key: 'filterWebsite' },
 ]
 
 export function FilterTabs({

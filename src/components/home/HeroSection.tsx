@@ -9,7 +9,6 @@ import { useGSAP } from '@/hooks/useGSAP'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { InteractiveImageFrame } from '@/components/ui/InteractiveImageFrame'
-import { AudioVisualizer } from '@/components/ui/AudioVisualizer'
 
 // --- Hero Section Component ---
 export function HeroSection() {
@@ -141,7 +140,7 @@ export function HeroSection() {
           >
             {t('hero.tagline')}
           </p>
-          <div ref={ctaRef} className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+          <div ref={ctaRef} className="inline-block">
             <Button
               as="a"
               href="https://line.me/R/ti/p/@701zbckv"
@@ -152,7 +151,6 @@ export function HeroSection() {
             >
               {t('hero.cta')}
             </Button>
-            <AudioVisualizer />
           </div>
         </div>
 

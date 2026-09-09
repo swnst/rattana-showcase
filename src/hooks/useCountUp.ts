@@ -1,8 +1,7 @@
 'use client'
 
-// --- Count Up Hook ---
 import { useEffect, useState } from 'react'
-import { gsap, ScrollTrigger } from '@/lib/gsap'
+import { gsap } from '@/lib/gsap'
 
 interface UseCountUpOptions {
   end: number
