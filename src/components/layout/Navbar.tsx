@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
 import { useLenisContext } from '@/components/providers/LenisProvider'
+import { AudioVisualizer } from '@/components/ui/AudioVisualizer'
 
 const navItems = [
   { href: '/', key: 'home' },
@@ -95,8 +96,10 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* --- Right Actions (Language Switcher + Work CTA) --- */}
-        <div className="flex items-center gap-3">
+        {/* --- Right Actions (Visualizer + Language Switcher + Work CTA) --- */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <AudioVisualizer className="hidden sm:inline-flex" />
+
           <button
             onClick={toggleLanguage}
             className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-white/80 backdrop-blur-md border border-rose-200/80 text-[#201018] hover:border-pink-accent hover:text-pink-accent hover:bg-pink-accent/5 transition-all cursor-pointer shadow-xs"

@@ -16,7 +16,7 @@ export function PageTransition({ children }: PageTransitionProps) {
   const { lenis } = useLenisContext()
 
   useEffect(() => {
-    // Force immediate scroll to top on both Lenis and native browser
+    // Reset scroll instantly without fighting RAF
     if (lenis) {
       lenis.scrollTo(0, { immediate: true })
     }
@@ -24,31 +24,27 @@ export function PageTransition({ children }: PageTransitionProps) {
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
 
-    // Refresh ScrollTrigger calculations after DOM settles
-    const timer1 = setTimeout(() => {
-      if (lenis) {
-        lenis.scrollTo(0, { immediate: true })
-      }
-      ScrollTrigger.refresh()
-    }, 60)
-
-    const timer2 = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 250)
+    // Refresh ScrollTrigger after next two animation frames so DOM is stable
+    let rafId: number
+    const timer = setTimeout(() => {
+      rafId = requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
+    }, 100)
 
     return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
+      clearTimeout(timer)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [pathname, lenis])
 
   return (
     <motion.div
       key={pathname}
-      initial={{ opacity: 0, y: 15, filter: 'blur(3px)' }}
-      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-      className="w-full"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.28, ease: [0.25, 1, 0.5, 1] }}
+      className="w-full will-change-[transform,opacity] transform-gpu"
     >
       {children}
     </motion.div>

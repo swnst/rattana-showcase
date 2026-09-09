@@ -18,9 +18,25 @@
 
 /* --- Base Styles --- */
 html {
-  scroll-behavior: smooth;
   background-color: #FFF8F9;
   color: #201018;
+}
+
+/* --- Official Lenis Smooth Scroll Rules (Prevents Stutter & Conflict) --- */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {

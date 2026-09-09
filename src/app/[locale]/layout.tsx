@@ -8,6 +8,8 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { IntroScreen } from '@/components/layout/IntroScreen'
 import { PageTransition } from '@/components/layout/PageTransition'
+import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
+import { FluidCursor } from '@/components/ui/FluidCursor'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -107,6 +109,8 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ScrollProgressBar />
+      <FluidCursor />
       <IntroScreen />
       <Navbar />
       <main className="min-h-screen pt-20">

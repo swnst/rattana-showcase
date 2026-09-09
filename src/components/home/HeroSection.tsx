@@ -6,8 +6,10 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { gsap } from '@/lib/gsap'
 import { useGSAP } from '@/hooks/useGSAP'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { InteractiveImageFrame } from '@/components/ui/InteractiveImageFrame'
+import { AudioVisualizer } from '@/components/ui/AudioVisualizer'
 
 // --- Hero Section Component ---
 export function HeroSection() {
@@ -105,8 +107,16 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_65%_30%,rgba(255,182,199,0.45)_0%,rgba(255,235,240,0.25)_50%,transparent_80%),linear-gradient(180deg,#FFF1F4_0%,#FFE4EB_50%,#FFF8F9_100%)] py-20 md:py-32"
     >
       {/* Ambient background glow and soft bubble particles */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/30 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-pink-400/20 blur-3xl pointer-events-none -z-10" />
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/35 blur-3xl pointer-events-none -z-10 transform-gpu"
+      />
+      <motion.div
+        animate={{ scale: [1.1, 0.95, 1.1], opacity: [0.2, 0.35, 0.2] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-pink-400/25 blur-3xl pointer-events-none -z-10 transform-gpu"
+      />
 
       <div className="max-w-7xl mx-auto px-6 w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8 relative z-10">
         <div className="flex-1 text-center lg:text-left">
@@ -131,7 +141,7 @@ export function HeroSection() {
           >
             {t('hero.tagline')}
           </p>
-          <div ref={ctaRef} className="inline-block">
+          <div ref={ctaRef} className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
             <Button
               as="a"
               href="https://line.me/R/ti/p/@701zbckv"
@@ -142,14 +152,34 @@ export function HeroSection() {
             >
               {t('hero.cta')}
             </Button>
+            <AudioVisualizer />
           </div>
         </div>
 
         <div className="flex-1 flex justify-center lg:justify-end">
           <div
             ref={imageWrapperRef}
-            className="w-64 sm:w-80 md:w-96"
+            className="relative w-64 sm:w-80 md:w-96"
           >
+            {/* Floating Floating Micro-Badges */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -top-4 -right-2 sm:-right-4 z-30 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-rose-200/90 shadow-[0_10px_25px_rgba(232,74,116,0.18)] flex items-center gap-2 select-none"
+            >
+              <span className="w-2 h-2 rounded-full bg-pink-accent animate-ping" />
+              <span className="text-xs font-semibold text-rose-950">10K+ Community</span>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+              className="absolute -bottom-4 -left-2 sm:-left-6 z-30 px-4 py-2 rounded-2xl bg-white/90 backdrop-blur-md border border-rose-200/90 shadow-[0_10px_25px_rgba(232,74,116,0.18)] flex items-center gap-2 select-none"
+            >
+              <span className="text-sm font-bold text-pink-accent">#</span>
+              <span className="text-xs font-semibold text-rose-950">Video Editor & Creator</span>
+            </motion.div>
+
             <InteractiveImageFrame
               aspectRatio="aspect-square"
               tiltStrength={12}
